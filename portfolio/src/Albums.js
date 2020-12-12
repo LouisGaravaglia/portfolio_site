@@ -16,12 +16,14 @@ function Albums({typeOfAlbums}) {
       id: 1,
       title: "LYRCS",
       gif: LYRCS_GIF,
+      link: "http://lyrcs.herokuapp.com/",
       summary: "LYRCS is a web app that displays lyrics for a song in its original language as well as a translated language of the user's choice. Tech Stack: Javascript | React | Redux | Node | Express | PostgreSQL"
     },
     {
       id: 2,
       title: "Wine-not!",
       gif: WINE_GIF,
+      link: "https://wine-not-app.herokuapp.com/",
       summary: "Would you like something new to drink? Wine-Not! A web app that allows users to find new Wines to enjoy. Tech Stack: Javascript | Python | Flask | PostgreSQL | WTForms | API"
     }
   ];

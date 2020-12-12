@@ -6,16 +6,15 @@ import Hover from "./Hover";
 
 const SearchResultList = ({resultsArray, handleSearch}) => {
   const [resultsIdx, setResultsIdx] = useState(0);
-   const [albumHover, setAlbumHover] = useState(false);
+  const [albumHover, setAlbumHover] = useState(false);
   const workInView = resultsArray[resultsIdx];
 
-  
-  const updateResultsInView = (val) => {
-    setResultsIdx(val);
-  };
 
-    const handleAlbumClick = () => {
 
+
+  const openInNewTab = () => {
+    const newWindow = window.open(workInView.link, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null;
   };
 
   const handleForwardClick = () => {
@@ -44,7 +43,7 @@ const SearchResultList = ({resultsArray, handleSearch}) => {
 
       </div>
 
-    <div className="Album" >
+    <div className="Project-Container" >
 
      <Hover scale={1.05}>
       <div onClick={handleBackClick} className="Back-Arrow"> 
@@ -55,18 +54,18 @@ const SearchResultList = ({resultsArray, handleSearch}) => {
       <Hover scale={1.05}>
       <div onMouseEnter={() => setAlbumHover(true)} onMouseLeave={() => setAlbumHover(false)}>
         {albumHover && 
-        <div className="Album-Name-Box" onClick={handleAlbumClick}>
+        <div className="Work-Summary-Container" onClick={openInNewTab}>
         <video className="Work-Gif"  loop="true" autoplay="autoplay" muted>
           <source src={workInView.gif} type="video/mp4" />
         </video>
-          <div className="Work-Summary">
+          <div className="Work-Summary-Box">
           <div className="Work-Summary-Background"></div>
-            <p className="Album-Name">{workInView.summary}</p>
+            <p className="Work-Summary-Text">{workInView.summary}</p>
           </div>
         </div>
         }
         {!albumHover &&
-        <div className="Work-Title-Box">
+        <div onClick={openInNewTab} className="Work-Title-Box">
           <p className="Work-Title">{workInView.title}</p>
         </div>
         }
@@ -83,7 +82,7 @@ const SearchResultList = ({resultsArray, handleSearch}) => {
     </div>
 
      <div>
-        <p className="Work-Text">0{resultsIdx + 1} / 02</p>
+        <p className="Project-Page-Number">0{resultsIdx + 1} / 02</p>
       </div>
    
       {/* <PaginationSlider  resultsArray={resultsArray} itemsPerPage={itemsPerPage} handleSliderChange={updateResultsInView} containerClass="Main-Pagination-Slider-Container" sliderClass="Main-Pagination-Slider"/> */}
