@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Hover from "./Hover";
 import Project from  "./Project";
 
-const Projects = ({portfolioItems}) => {
+const ProjectList = ({portfolioItems}) => {
   const [resultsIdx, setResultsIdx] = useState(0);
   const projectInView = portfolioItems[resultsIdx];
 
@@ -54,4 +54,4 @@ const Projects = ({portfolioItems}) => {
   );
 };
 
-export default Projects;
+export default ProjectList;

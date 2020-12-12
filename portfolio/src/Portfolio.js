@@ -1,7 +1,7 @@
 import React from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
-import Projects from "./Projects";
+import Projects from "./ProjectsList";
 import LYRCS_GIF from "./images/lyrcs_gif.mp4";
 import WINE_GIF from "./images/wine_gif.mp4";
 

@@ -138,11 +138,11 @@ ion-icon {
 /* //////////////////////////////////////  MISC ////////////////////////////////////// */
 
 .Top-Placeholder {
-  height: 43px;
-  width: 43px;
+  height: 80px;
+  width: 80px;
 }
 
-/* //////////////////////////////////////  MEDIA QUEIRES ////////////////////////////////////// */
+/* //////////////////////////////////////  MEDIA QUERIES - 820PX ////////////////////////////////////// */
 
 @media only screen and (max-width: 820px) {
 
@@ -194,6 +194,8 @@ ion-icon {
 
 }
 
+/* //////////////////////////////////////  MEDIA QUERIES - 580PX ////////////////////////////////////// */
+
 @media only screen and (max-width: 580px) {
 
   .Work-Title {
@@ -240,6 +242,66 @@ ion-icon {
 
   .Back-Arrow {
     margin-right: 50px;
+  }
+
+  .Project-Page-Number {
+    font-size: 1.6rem;
+  }
+
+}
+
+/* //////////////////////////////////////  MEDIA QUERIES - 400PX ////////////////////////////////////// */
+
+@media only screen and (max-width: 400px) {
+
+  .Work-Title {
+    font-size: 1.2rem;
+  }
+
+  .Work-Title-Box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .Work-Summary-Container {
+    height: 150px;
+    width: 150px;
+    max-width: 150px;
+  }
+
+  .Work-Summary-Box{
+    height: 150px;
+    width: 150px;
+    max-width: 150px;
+  }
+
+  .Work-Summary-Background {
+    height: 150px;
+    width: 150px;
+  }
+
+  .Work-Summary-Text {
+    font-size: 0.6rem;
+  }
+
+  .Work-Gif {
+    max-width: 150px;
+  }
+
+  ion-icon {
+    font-size: 30px;
+  }
+
+  .Forward-Arrow {
+    margin-left: 20px;
+  }
+
+  .Back-Arrow {
+    margin-right: 20px;
+  }
+
+  .Project-Page-Number {
+    font-size: 1rem;
   }
 
 }
