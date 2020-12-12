@@ -73,12 +73,12 @@ html, body {
 }
 
 .Work-Summary-Text {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.6rem;
   color: #fff;
   z-index: 6;
-  margin: 10px 20px;
+  margin: 10px 25px;
 }
 
 .Work-Gif {
@@ -100,7 +100,7 @@ html, body {
 }
 
 .Work-Title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
@@ -111,7 +111,7 @@ html, body {
 /* //////////////////////////////////////  PAGE NUMBERS ////////////////////////////////////// */
 
 .Project-Page-Number {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 200;
   color: #fff;
@@ -140,4 +140,106 @@ ion-icon {
 .Top-Placeholder {
   height: 43px;
   width: 43px;
+}
+
+/* //////////////////////////////////////  MEDIA QUEIRES ////////////////////////////////////// */
+
+@media only screen and (max-width: 820px) {
+
+  .Work-Title {
+    font-size: 2rem;
+  }
+
+  .Work-Title-Box {
+    width: 300px;
+    height: 300px;
+  }
+
+  .Work-Summary-Container {
+    height: 300px;
+    width: 300px;
+    max-width: 300px;
+  }
+
+  .Work-Summary-Box{
+    height: 300px;
+    width: 300px;
+    max-width: 300px;
+  }
+
+  .Work-Summary-Background {
+    height: 300px;
+    width: 300px;
+  }
+
+  .Work-Summary-Text {
+    font-size: 1.2rem;
+  }
+
+  .Work-Gif {
+    max-width: 300px;
+  }
+
+  ion-icon {
+    font-size: 80px;
+  }
+
+  .Forward-Arrow {
+    margin-left: 50px;
+  }
+
+  .Back-Arrow {
+    margin-right: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 580px) {
+
+  .Work-Title {
+    font-size: 1.5rem;
+  }
+
+  .Work-Title-Box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .Work-Summary-Container {
+    height: 200px;
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .Work-Summary-Box{
+    height: 200px;
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .Work-Summary-Background {
+    height: 200px;
+    width: 200px;
+  }
+
+  .Work-Summary-Text {
+    font-size: 0.8rem;
+  }
+
+  .Work-Gif {
+    max-width: 200px;
+  }
+
+  ion-icon {
+    font-size: 50px;
+  }
+
+  .Forward-Arrow {
+    margin-left: 50px;
+  }
+
+  .Back-Arrow {
+    margin-right: 50px;
+  }
+
 }

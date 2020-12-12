@@ -1,15 +1,11 @@
 import React from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
-import SearchResultList from "./SearchResultList";
-import useViewport from "./hooks/useViewport";
+import Projects from "./Projects";
 import LYRCS_GIF from "./images/lyrcs_gif.mp4";
 import WINE_GIF from "./images/wine_gif.mp4";
 
-function Albums({typeOfAlbums}) {
-  const {viewportWidth} = useViewport();
-  let itemsPerPage;
-  let albumKey;
+function Portfolio() {
 
   const portfolioItems = [
     {
@@ -28,28 +24,6 @@ function Albums({typeOfAlbums}) {
     }
   ];
 
-  //VIEWPORT BREAKPOINTS TO DETERMINT HOW MANY ALBUM COVERS TO DISPLAY AT ONCE
-  // if (viewportWidth < 1180 && viewportWidth > 780) {
-  //   itemsPerPage = 2;
-  // } else if (viewportWidth < 780) {
-  //   itemsPerPage = 1;
-  // } else {
-  //   itemsPerPage = 3;
-  // };
-
-  //ALBUM KEY WHICH WOULD CHANGE IF ITEMS PER PAGE CHANGED TO RERENDER COMPONENT IF NUMBER OF ALUMBS DISPLAYING IS CHANGING
-  // if (itemsPerPage < albums.length) {
-  //   albumKey = itemsPerPage;
-  // } else {
-  //   albumKey = 0;
-  // };
-
-////////////////////////////////////////////////////  HANDLE CLICK FUNCTIONS  ////////////////////////////////////////////////////
-
-  const handleAlbumClick = async () => {
-
-  };
-
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
@@ -62,7 +36,7 @@ function Albums({typeOfAlbums}) {
         <div style={props}>
 
           <div className="Main-Container">
-            <SearchResultList key={portfolioItems[0].id} resultsArray={portfolioItems} handleSearch={handleAlbumClick} />
+            <Projects key={portfolioItems[0].id} portfolioItems={portfolioItems}/>
           </div>
 
         </div>
@@ -71,4 +45,4 @@ function Albums({typeOfAlbums}) {
   );
 };
 
-export default Albums;
+export default Portfolio;
