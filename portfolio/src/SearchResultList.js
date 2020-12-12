@@ -65,7 +65,12 @@ const SearchResultList = ({resultsArray, handleSearch}) => {
           </div>
         </div>
         }
-        <img className="Work-Image" src={workInView.image} alt="Girl in a jacket" />
+        {!albumHover &&
+        <div className="Work-Title-Box">
+          <p className="Work-Title">{workInView.title}</p>
+        </div>
+        }
+        {/* <img className="Work-Image" src={workInView.image} alt="Girl in a jacket" /> */}
       </div>
       </Hover>
 

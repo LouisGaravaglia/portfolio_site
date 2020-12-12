@@ -4,9 +4,7 @@ import './App.css';
 import SearchResultList from "./SearchResultList";
 import useViewport from "./hooks/useViewport";
 import LYRCS_GIF from "./images/lyrcs_gif.mp4";
-import LYRCS_JPEG from "./images/lyrcs.jpeg";
 import WINE_GIF from "./images/wine_gif.mp4";
-import WINE_JPG from "./images/wine.jpg";
 
 function Albums({typeOfAlbums}) {
   const {viewportWidth} = useViewport();
@@ -16,13 +14,13 @@ function Albums({typeOfAlbums}) {
   const portfolioItems = [
     {
       id: 1,
-      image: LYRCS_JPEG,
+      title: "LYRCS",
       gif: LYRCS_GIF,
       summary: "LYRCS is a web app that displays lyrics for a song in its original language as well as a translated language of the user's choice. Tech Stack: Javascript | React | Redux | Node | Express | PostgreSQL"
     },
     {
       id: 2,
-      image: WINE_JPG,
+      title: "Wine-not!",
       gif: WINE_GIF,
       summary: "Would you like something new to drink? Wine-Not! A web app that allows users to find new Wines to enjoy. Tech Stack: Javascript | Python | Flask | PostgreSQL | WTForms | API"
     }
