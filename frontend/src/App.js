@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import Portfolio from "./Portfolio";
+import Navbar from "./Navbar";
 
 function App() {
 
   return (
     <div className="App">
-      <Portfolio /> 
+      <Navbar />
+      <Portfolio />
     </div>
   );
 };

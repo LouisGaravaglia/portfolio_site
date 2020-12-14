@@ -7,6 +7,57 @@ html, body {
   overflow-x: hidden; 
 }
 
+/* //////////////////////////////////////  NAVBAR  ////////////////////////////////////// */
+
+.Navbar-Container-Left {
+  position: absolute;
+  height: 80px;
+}
+
+.Navbar-Container-Right {
+  position: absolute;
+  right: 0;
+  height: 80px;
+}
+
+.Navbar-Name-Box {
+  position: sticky;
+  z-index: 4;
+  top: 30px;
+  margin: 0;
+  padding: 0;
+  margin-left: 50px;
+}
+
+.Navbar-Name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.Navbar-Logo-Box {
+  position: sticky;
+  z-index: 4;
+  top: 31px;
+  margin: 0;
+  padding: 0;
+  margin-right: 50px;
+}
+
+.LinkedIn-Logo {
+  margin-right: 10px;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.GitHub-Logo {
+  cursor: pointer;
+}
+
 /* //////////////////////////////////////  MAIN  ////////////////////////////////////// */
 
 .Main-Container{
@@ -117,6 +168,7 @@ html, body {
   color: #fff;
   margin: 20px 0;
   padding: 0;
+  cursor: default;
 }
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
@@ -124,6 +176,12 @@ html, body {
 ion-icon {
   font-size: 100px;
   color: #fff;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 20px;
+  color: yellow;
   cursor: pointer;
 }
 
