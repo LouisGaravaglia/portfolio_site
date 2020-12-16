@@ -25,7 +25,7 @@ const Project = ({project}) => {
 
 
           <Hover scale={1.05}>
-            <div className="Project" onMouseEnter={() => setAlbumHover(true)} onMouseLeave={() => setAlbumHover(false)}>
+            <div onMouseEnter={() => setAlbumHover(true)} onMouseLeave={() => setAlbumHover(false)}>
               {
                 albumHover &&
                 <div className="Work-Summary-Container" onClick={openInNewTab}>

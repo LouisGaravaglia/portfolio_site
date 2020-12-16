@@ -170,23 +170,6 @@ html, body {
 
 /* //////////////////////////////////////  PAGE NUMBERS ////////////////////////////////////// */
 
-/* .ProjectList-Container {
-  position: relative;
-} */
-
-.Project {
-  position: relative;
-}
-
-/* .Numbers {
-  position: absolute;
-  bottom: 50px;
-} */
-
-/* .Page-Number-Box {
-  margin: 40px 0;
-} */
-
 .Project-Page-Number {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
@@ -219,12 +202,6 @@ ion-icon {
   margin-right: 100px;
 }
 
-/* //////////////////////////////////////  MISC ////////////////////////////////////// */
-
-/* .Top-Placeholder {
-  height: 80px;
-  width: 80px;
-} */
 
 /* //////////////////////////////////////  MEDIA QUERIES - 820PX ////////////////////////////////////// */
 

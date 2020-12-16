@@ -95,10 +95,6 @@ const divStyle = {
 
       </div>
 
-      {/* <div className="Page-Number-Box">
-        <p className="Project-Page-Number">0{resultsIdx + 1} / 02</p>
-      </div> */}
-
       <div style={divStyle}>
         <p className="Project-Page-Number">0{resultsIdx + 1} / 02</p>
       </div>
