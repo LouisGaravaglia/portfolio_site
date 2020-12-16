@@ -25,7 +25,7 @@ const Project = ({project}) => {
 
 
           <Hover scale={1.05}>
-            <div onMouseEnter={() => setAlbumHover(true)} onMouseLeave={() => setAlbumHover(false)}>
+            <div className="Project" onMouseEnter={() => setAlbumHover(true)} onMouseLeave={() => setAlbumHover(false)}>
               {
                 albumHover &&
                 <div className="Work-Summary-Container" onClick={openInNewTab}>
@@ -33,7 +33,7 @@ const Project = ({project}) => {
                     <source src={project.gif} type="video/mp4" />
                   </video>
                   <div className="Work-Summary-Box">
-                    <div className="Work-Summary-Background"></div>
+                    <div className={`Work-Summary-Background ${project.classname}`}></div>
                       <p className="Work-Summary-Text">{project.summary}</p>
                     </div>
                 </div>

@@ -29,10 +29,10 @@ const NavBar = () => {
       </div>
       <div className="Navbar-Container-Right">
         <div className="Navbar-Logo-Box">
-          <Hover scale={1.20}>
+          <Hover scale={1.05}>
             <LogoLinkedin className="LinkedIn-Logo" onClick={openLinkedIn} fontSize="25px" color="#fff" />
           </Hover>
-          <Hover scale={1.20}>
+          <Hover scale={1.05}>
             <LogoGithub className="GitHub-Logo" onClick={openGitHub} fontSize="25px" color="#fff" />
           </Hover>
         </div>
