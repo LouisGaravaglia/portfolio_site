@@ -180,6 +180,16 @@ html, body {
   cursor: default;
 }
 
+.GitHub-Project {
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.Website-Project {
+  margin-left: 60px;
+  cursor: pointer;
+}
+
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
 ion-icon {
@@ -252,6 +262,14 @@ ion-icon {
   .Back-Arrow {
     margin-right: 50px;
   }
+
+  .GitHub-Project {
+    margin-right: 40px;
+  }
+
+  .Website-Project {
+    margin-left: 40px;
+  }
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 580PX ////////////////////////////////////// */
@@ -308,6 +326,13 @@ ion-icon {
     font-size: 1.6rem;
   }
 
+  .GitHub-Project {
+    margin-right: 30px;
+  }
+
+  .Website-Project {
+    margin-left: 30px;
+  }
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 400PX ////////////////////////////////////// */
@@ -372,5 +397,12 @@ ion-icon {
     margin-left: 10px;
   }
 
+  .GitHub-Project {
+    margin-right: 20px;
+  }
+
+  .Website-Project {
+    margin-left: 20px;
+  }
 }
 
