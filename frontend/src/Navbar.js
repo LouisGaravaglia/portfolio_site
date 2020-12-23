@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin'
@@ -14,6 +14,11 @@ const NavBar = () => {
 
   const openGitHub = () => {
     const newWindow = window.open("https://github.com/LouisGaravaglia", '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null;
+  };
+
+  const openInstagram = () => {
+    const newWindow = window.open("https://www.instagram.com/louisgaravaglia/", '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
   };
 
@@ -34,6 +39,9 @@ const NavBar = () => {
           </Hover>
           <Hover scale={1.05}>
             <LogoGithub className="GitHub-Logo" onClick={openGitHub} fontSize="25px" color="#fff" />
+          </Hover>
+          <Hover scale={1.05}>
+            <ion-icon onClick={openInstagram} name="logo-instagram"></ion-icon>
           </Hover>
         </div>
       </div>

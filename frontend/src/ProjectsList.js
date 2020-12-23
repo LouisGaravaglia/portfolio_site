@@ -109,7 +109,9 @@ const divStyle = {
 
       <Hover scale={1.05}>
         <div onClick={handleBackClick} className="Back-Arrow">
-          <ion-icon name="chevron-back-outline"></ion-icon>
+          <span class="material-icons">
+            navigate_before
+          </span>
         </div>
       </Hover>
 
@@ -117,7 +119,9 @@ const divStyle = {
 
       <Hover scale={1.05}>
         <div onClick={handleForwardClick} className="Forward-Arrow">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <span class="material-icons">
+            navigate_next
+          </span>
         </div>
       </Hover>
 
