@@ -6,8 +6,8 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
 
-const ProjectList = ({portfolioItems, projectHover, setProjectHover}) => {
-  const [resultsIdx, setResultsIdx] = useState(0);
+const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx}) => {
+
   const projectInView = portfolioItems[resultsIdx];
   const {viewportWidth, viewportHeight} = useViewport();
   let bottomVal = 0;

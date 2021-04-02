@@ -12,6 +12,7 @@ import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
+  const [resultsIdx, setResultsIdx] = useState(0);
   const {viewportWidth, viewportHeight} = useViewport();
   const aspectRatio = viewportWidth / viewportHeight;
   let gifWidth;
@@ -30,7 +31,7 @@ function Portfolio() {
     {
       id: 1,
       title: "Acoustic.io",
-      gif: ACOUSTIC_GIF,
+      gif: ACOUSTIC_LG,
       link: "https://acoustic-io.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
       summary: "***CURRENTLY IN DEVELOPMENT*** Acoustic.io is a web app that will use AI to create playlists for you of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
@@ -66,16 +67,14 @@ function Portfolio() {
 
   let gifBackground;
 
-if (projectHover) gifBackground = (
-  <>
-
-  <div className="Work-Gif-Box"></div>
-  <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop="true" autoplay="autoplay" muted>
-    <source src={ACOUSTIC_LG} type="video/mp4" />
-  </video>
- 
-  </>
-)
+  if (projectHover) gifBackground = (
+    <>
+    <div className="Work-Gif-Box"></div>
+    <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop="true" autoplay="autoplay" muted>
+      <source src={portfolioItems[resultsIdx].gif} type="video/mp4" />
+    </video>
+    </>
+  )
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -89,7 +88,7 @@ if (projectHover) gifBackground = (
         <div style={props}>
 
           <div className="Main-Container" style={{background: mainBackground}}>
-            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover}/>
+            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} resultsIdx={resultsIdx} setResultsIdx={setResultsIdx}/>
             {gifBackground}
           </div>
  
