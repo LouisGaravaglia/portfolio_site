@@ -131,7 +131,7 @@ const divStyle = {
         <Hover scale={1.05}>
           <LogoGithub className="GitHub-Project" onClick={openGitHub} fontSize={iconFontSize} color="#fff" />
         </Hover>
-        <p className="Project-Page-Number">0{resultsIdx + 1} / 02</p>
+        <p className="Project-Page-Number">0{resultsIdx + 1} / 0{portfolioItems.length}</p>
         <Hover scale={1.05}>
           <MdLaptop className="Website-Project" onClick={openSite} fontSize={iconFontSize} color="#fff" />
         </Hover>

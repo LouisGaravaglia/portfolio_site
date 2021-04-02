@@ -4,21 +4,31 @@ import './App.css';
 import ProjectsList from "./ProjectsList";
 import LYRCS_GIF from "./images/lyrcs_gif.mp4";
 import WINE_GIF from "./images/wine_gif.mp4";
+import ACOUSTIC_GIF from "./images/acoustic_io.mp4";
 
 function Portfolio() {
 
   const portfolioItems = [
     {
       id: 1,
+      title: "Acoustic.io",
+      gif: ACOUSTIC_GIF,
+      link: "https://acoustic-io.herokuapp.com/",
+      githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
+      summary: "***CURRENTLY IN DEVELOPMENT*** Acoustic.io is a web app that will use AI to create playlists for you of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
+      classname: "LYRCS-Opacity "
+    },
+    {
+      id: 2,
       title: "LYRCS",
       gif: LYRCS_GIF,
       link: "http://lyrcs.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/iTranslate",
       summary: "LYRCS is a web app that displays lyrics for a song in its original language as well as a translated language of the user's choice. Tech Stack: Javascript | React | Redux | Node | Express | PostgreSQL",
-      classname: "LYRCS-Opacity "
+      classname: "LYRCS-Opacity"
     },
     {
-      id: 2,
+      id: 3,
       title: "Wine-not!",
       gif: WINE_GIF,
       link: "https://wine-not-app.herokuapp.com/",
