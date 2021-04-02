@@ -4,15 +4,20 @@ import Project from  "./Project";
 import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
-
+import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
 
 const ProjectList = ({portfolioItems}) => {
   const [resultsIdx, setResultsIdx] = useState(0);
+  const [projectHover, setProjectHover] = useState(false);
   const projectInView = portfolioItems[resultsIdx];
   const {viewportWidth, viewportHeight} = useViewport();
   let bottomVal = 0;
   let iconFontSize = '25px';
+  const aspectRatio = viewportWidth / viewportHeight;
+  let gifWidth;
+  let gifHeight;
 
+  console.log("aspectRatio: ", aspectRatio);
   const handleForwardClick = () => {
     if (resultsIdx === portfolioItems.length - 1) {
       return;
@@ -38,6 +43,15 @@ const ProjectList = ({portfolioItems}) => {
     const newWindow = window.open(projectInView.githubLink, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
   };
+
+  //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
+  if (aspectRatio <= 2.11659) {
+    gifHeight = '100vh';
+    gifWidth = 'auto'
+  } else {
+    gifHeight = 'auto';
+    gifWidth = '100vw';
+  }
 
   //UPDATES PAGE NUMBERS AND LINKS ABSOLUTE HEIGHT TO BE ADJUSTED BASED OFF OF SCREEN SIZE
   //PAGE NUMBERS AND LINKS NEEDED TO BE ABSOLUTE POSITIONING SINCE THE HOVER ANIMATION WOULD EFFECT THEIR POSITION WHEN TRIGGERED
@@ -101,12 +115,35 @@ const divStyle = {
   flexWrap: 'nowrap'
 };
 
+let gifBackground;
+
+if (projectHover) gifBackground = (
+  <>
+  <div className="Work-Gif-Box"></div>
+  <video style={{position: "absolute", width: gifWidth, height: gifHeight}} loop="true" autoplay="autoplay" muted>
+    <source src={ACOUSTIC_LG} type="video/mp4" />
+  </video>
+  </>
+)
+
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
     <>
       <div className="Project-Container" >
 
+               {/* <div className="Work-Gif-Box"> */}
+               {/* <video className="video-background" style={{position: "absolute", width: 'auto', height: '100vh'}} loop="true" autoplay="autoplay" muted>
+                    <source src={ACOUSTIC_LG} type="video/mp4" />
+                  </video> */}
+                {/* </div> */}
+
+                {/* <video className="video-background" style={{position: "absolute", width: gifWidth, height: gifHeight}} loop="true" autoplay="autoplay" muted>
+                    <source src={ACOUSTIC_LG} type="video/mp4" />
+                  </video> */}
+
+                  {gifBackground}
+                
       <Hover scale={1.05}>
         <div onClick={handleBackClick} className="Back-Arrow">
           <span class="material-icons">
@@ -115,7 +152,7 @@ const divStyle = {
         </div>
       </Hover>
 
-      {<Project key={projectInView.id} project={projectInView}/>}
+      {<Project key={projectInView.id} project={projectInView} projectHover={projectHover} setProjectHover={setProjectHover}/>}
 
       <Hover scale={1.05}>
         <div onClick={handleForwardClick} className="Forward-Arrow">
