@@ -1,12 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
 import LYRCS_GIF from "./images/lyrcs_gif.mp4";
 import WINE_GIF from "./images/wine_gif.mp4";
 import ACOUSTIC_GIF from "./images/acoustic_io.mp4";
+import useViewport from "./hooks/useViewport"
+import LogoGithub from 'react-ionicons/lib/LogoGithub';
+import MdLaptop from 'react-ionicons/lib/MdLaptop';
+import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
 
 function Portfolio() {
+  const [projectHover, setProjectHover] = useState(false);
+  const {viewportWidth, viewportHeight} = useViewport();
+  const aspectRatio = viewportWidth / viewportHeight;
+  let gifWidth;
+  let gifHeight;
+    //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
+    if (aspectRatio <= 2.11659) {
+      gifHeight = '100vh';
+      gifWidth = 'auto'
+    } else {
+      gifHeight = 'auto';
+      gifWidth = '100vw';
+    }
+  
 
   const portfolioItems = [
     {
@@ -38,6 +56,27 @@ function Portfolio() {
     }
   ];
 
+  let mainBackground;
+
+  if (projectHover) {
+    mainBackground = "none"
+  } else {
+    mainBackground = "linear-gradient(to right, #63a198 0%, #8874c2 100%)";
+  }
+
+  let gifBackground;
+
+if (projectHover) gifBackground = (
+  <>
+
+  <div className="Work-Gif-Box"></div>
+  <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop="true" autoplay="autoplay" muted>
+    <source src={ACOUSTIC_LG} type="video/mp4" />
+  </video>
+ 
+  </>
+)
+
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
@@ -49,9 +88,11 @@ function Portfolio() {
       {props => (
         <div style={props}>
 
-          <div className="Main-Container">
-            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems}/>
+          <div className="Main-Container" style={{background: mainBackground}}>
+            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover}/>
+            {gifBackground}
           </div>
+ 
 
         </div>
       )}

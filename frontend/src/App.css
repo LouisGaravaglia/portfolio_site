@@ -95,7 +95,7 @@ ion-icon {
   flex-wrap: nowrap;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to right, #63a198 0%, #8874c2 100%);
+  /* background: linear-gradient(to right, #63a198 0%, #8874c2 100%); */
 }
 
 /* //////////////////////////////////////  DISPLAY PROJECT ////////////////////////////////////// */
@@ -127,13 +127,20 @@ ion-icon {
   padding: 0;
 } */
 
-.Work-Gif-Box {
+/* .Work-Gif-Container {
   position: absolute;
-  background-color: red;
-  opacity: 0.5;
   height: 100vh;
   width: 100vw;
-  z-index: 1;
+  z-index: -10;
+} */
+
+.Work-Gif-Box {
+  position: absolute;
+  background-color: rgb(0, 27, 34);
+  opacity: 0.7;
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
 }
 
 
