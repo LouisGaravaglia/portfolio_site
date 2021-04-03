@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Hover from "./Hover";
 import Project from  "./Project";
 import useViewport from "./hooks/useViewport"
@@ -28,7 +28,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     };
   };
 
-    const openSite = () => {
+  const openSite = () => {
     const newWindow = window.open(projectInView.link, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
   };
@@ -91,17 +91,15 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     iconFontSize = "15px";
   }
 
-const divStyle = {
-  position: 'absolute',
-  bottom: `${bottomVal}px`,
-  textAlign: 'center',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexWrap: 'nowrap'
-};
-
-
+  const divStyle = {
+    position: 'absolute',
+    bottom: `${bottomVal}px`,
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'nowrap'
+  };
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -109,16 +107,6 @@ const divStyle = {
     <>
       <div className="Project-Container" >
 
-               {/* <div className="Work-Gif-Box"> */}
-               {/* <video className="video-background" style={{position: "absolute", width: 'auto', height: '100vh'}} loop="true" autoplay="autoplay" muted>
-                    <source src={ACOUSTIC_LG} type="video/mp4" />
-                  </video> */}
-                {/* </div> */}
-
-                {/* <video className="video-background" style={{position: "absolute", width: gifWidth, height: gifHeight}} loop="true" autoplay="autoplay" muted>
-                    <source src={ACOUSTIC_LG} type="video/mp4" />
-                  </video> */}
-                
       <Hover scale={1.05}>
         <div onClick={handleBackClick} className="Back-Arrow">
           <span class="material-icons">

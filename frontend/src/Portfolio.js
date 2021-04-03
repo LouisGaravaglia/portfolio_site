@@ -3,8 +3,6 @@ import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
 import useViewport from "./hooks/useViewport"
-import LogoGithub from 'react-ionicons/lib/LogoGithub';
-import MdLaptop from 'react-ionicons/lib/MdLaptop';
 import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
 import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
@@ -14,17 +12,17 @@ function Portfolio() {
   const [resultsIdx, setResultsIdx] = useState(0);
   const {viewportWidth, viewportHeight} = useViewport();
   const aspectRatio = viewportWidth / viewportHeight;
-  console.log(aspectRatio);
   let gifWidth;
   let gifHeight;
-    //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
-    if (aspectRatio <= 2.358916) {
-      gifHeight = '100vh';
-      gifWidth = 'auto'
-    } else {
-      gifHeight = 'auto';
-      gifWidth = '100vw';
-    }
+
+  //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
+  if (aspectRatio <= 2.358916) {
+    gifHeight = '100vh';
+    gifWidth = 'auto'
+  } else {
+    gifHeight = 'auto';
+    gifWidth = '100vw';
+  }
   
 
   const portfolioItems = [

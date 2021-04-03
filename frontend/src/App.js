@@ -10,11 +10,6 @@ function App() {
     <div className="App">
       <Navbar />
       <Portfolio />
-      <div className="video-background-box">
-      {/* <video className="video-background" loop="true" autoplay="autoplay" muted>
-        <source src={ACOUSTIC} type="video/mp4" />
-      </video> */}
-      </div>
     </div>
   );
 };
