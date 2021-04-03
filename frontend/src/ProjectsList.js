@@ -4,7 +4,6 @@ import Project from  "./Project";
 import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
-import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
 
 const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx}) => {
 

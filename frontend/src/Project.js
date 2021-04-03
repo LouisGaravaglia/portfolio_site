@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Hover from "./Hover";
 import {Spring} from 'react-spring/renderprops';
 import useViewport from "./useViewport";
-// import ACOUSTIC from "./images/Acoustic_1.m4v";
 
 const Project = ({project, projectHover, setProjectHover}) => {
   const [albumHover, setAlbumHover] = useState(false);

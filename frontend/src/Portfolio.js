@@ -2,23 +2,23 @@ import React, {useState} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
-import LYRCS_GIF from "./images/lyrcs_gif.mp4";
-import WINE_GIF from "./images/wine_gif.mp4";
-import ACOUSTIC_GIF from "./images/acoustic_io.mp4";
 import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
-import ACOUSTIC_LG from "./images/Acoustic_LG.m4v";
+import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
+import LYRCS_GIF from "./images/LYRCS.mp4";
+import WINENOT_GIF from "./images/WINENOT.mp4";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
   const [resultsIdx, setResultsIdx] = useState(0);
   const {viewportWidth, viewportHeight} = useViewport();
   const aspectRatio = viewportWidth / viewportHeight;
+  console.log(aspectRatio);
   let gifWidth;
   let gifHeight;
     //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
-    if (aspectRatio <= 2.11659) {
+    if (aspectRatio <= 2.358916) {
       gifHeight = '100vh';
       gifWidth = 'auto'
     } else {
@@ -31,7 +31,7 @@ function Portfolio() {
     {
       id: 1,
       title: "Acoustic.io",
-      gif: ACOUSTIC_LG,
+      gif: ACOUSTIC_GIF,
       link: "https://acoustic-io.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
       summary: "***CURRENTLY IN DEVELOPMENT*** Acoustic.io is a web app that will use AI to create playlists for you of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
@@ -49,7 +49,7 @@ function Portfolio() {
     {
       id: 3,
       title: "Wine-not!",
-      gif: WINE_GIF,
+      gif: WINENOT_GIF,
       link: "https://wine-not-app.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/Wine-not",
       summary: "Would you like something new to drink? Wine-Not! A web app that allows users to find new Wines to enjoy. Tech Stack: Javascript | Python | Flask | PostgreSQL | Bulma",

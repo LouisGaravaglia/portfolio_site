@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Portfolio from "./Portfolio";
 import Navbar from "./Navbar";
-// import ACOUSTIC from "./images/Acoustic_1.m4v";
+
 
 function App() {
 
