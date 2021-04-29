@@ -6,7 +6,6 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 
 const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx}) => {
-
   const projectInView = portfolioItems[resultsIdx];
   const {viewportWidth, viewportHeight} = useViewport();
   let bottomVal = 0;

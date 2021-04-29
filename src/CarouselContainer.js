@@ -4,7 +4,7 @@ import useViewport from '../Hooks/useViewport';
 let playlists =  require('../fakeData/playlist.json');
 
 
-function PlaylistsTitleScrollContainer() {
+function CarouselContainer({portfolioItems}) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [parentFinishedMounting, setParentFinishedMounting] = useState<boolean>(false);
   const [selectedPlaylistRef, setSelectedPlaylistRef] = useState<any | null>(null);
@@ -80,7 +80,9 @@ function PlaylistsTitleScrollContainer() {
 
     <div className="scrolling-wrapper" ref={wrapperRef}>
       <div className='card' ><h2 ></h2></div>
-      {/* {playlists.map((playlist: any, index: any) => <PlaylistsTitleScroll key={index} index={index} playlist={playlist} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
+      {portfolioItems.map((project, index) => <Project key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover}/>)}
+
+      {/* {portfolioItems.map((item, index) => <PlaylistsTitleScroll key={index} index={index} item={item} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
       <div className='card' ><h2 ></h2></div>
 
     </div>
@@ -89,4 +91,4 @@ function PlaylistsTitleScrollContainer() {
   );
 };
 
-export default PlaylistsTitleScrollContainer;
+export default CarouselContainer;
