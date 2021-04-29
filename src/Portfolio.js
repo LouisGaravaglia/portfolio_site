@@ -68,7 +68,7 @@ function Portfolio() {
   if (projectHover) gifBackground = (
     <>
     <div className="Work-Gif-Box"></div>
-    <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop="true" autoplay="autoplay" muted>
+    <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted>
       <source src={portfolioItems[resultsIdx].gif} type="video/mp4" />
     </video>
     </>

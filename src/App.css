@@ -246,14 +246,15 @@ ion-icon {
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  /* z-index: 10; */
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-snap-type: x mandatory;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
@@ -269,7 +270,7 @@ ion-icon {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.089);
   margin: 0;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
 
