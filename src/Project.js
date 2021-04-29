@@ -4,7 +4,21 @@ import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
 import {Spring} from 'react-spring/renderprops';
 
-const Project = ({project, projectHover, setProjectHover, index}) => {
+const Project = ({project, portfolioItems, projectHover, setProjectHover, index, setResultsIdx}) => {
+  const {viewportWidth, viewportHeight} = useViewport();
+  const aspectRatio = viewportWidth / viewportHeight;
+  let gifWidth;
+  let gifHeight;
+
+  //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
+  if (aspectRatio <= 2.358916) {
+    gifHeight = '100vh';
+    gifWidth = 'auto'
+  } else {
+    gifHeight = 'auto';
+    gifWidth = '100vw';
+  }
+  
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -20,7 +34,6 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
     leftSideOfProjectDiv = left;
     rightSideOfProjectDiv = right;
   }
-  const {viewportWidth}  = useViewport();
   const viewportMidPoint = viewportWidth / 2;
 
   const entry = useElementOnScreen(projectRef, {
@@ -35,6 +48,11 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
 
     //   if(selectedPlaylistIndex === index) handleScrollToSelectedProject(projectRef);
     // }, [projectRef, selectedPlaylistIndex])
+
+  function handleProjectHover() {
+    setProjectHover(true);
+    setResultsIdx(index);
+  }
 
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
@@ -51,29 +69,29 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
 
 
           <Hover scale={1.05}>
-          <div className='card' onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)}>
+
               {
                 projectHover &&
-                <>
-   
-                  <div className="Work-Summary-Container" onClick={openInNewTab} ref={projectRef}>
-             
+                <div className='card' >
+                  <div className="Work-Summary-Container" onClick={openInNewTab} ref={projectRef} onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
                     <div className="Work-Summary-Box">
-                    <div className={`Work-Summary-Background`}></div>
-                        <p className="Work-Summary-Text">{project.summary}</p>
-                      </div>
+                      <div className={`Work-Summary-Background`}></div>
+                      <p className="Work-Summary-Text">{project.summary}</p>
+                    </div>
                   </div>
-                  </>
+                </div>
               }
               
               {
                 !projectHover &&
-                <div onClick={openInNewTab} className="Work-Title-Box">
-                  <p className="Work-Title">{project.title}</p>
+                <div className='card' >
+                  <div onClick={openInNewTab} className="Work-Title-Box" onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
+                    <p className="Work-Title">{project.title}</p>
+                  </div>
                 </div>
               }
 
-            </div>
+
           </Hover>
 
 

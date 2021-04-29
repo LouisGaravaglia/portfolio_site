@@ -4,7 +4,7 @@ import PlaylistsTitleScroll from './PlaylistsTitleScroll';
 import useViewport from './hooks/useViewport';
 
 
-function CarouselContainer({portfolioItems, projectHover, setProjectHover}) {
+function CarouselContainer({portfolioItems, projectHover, setProjectHover, setResultsIdx}) {
   // const [isVisible, setIsVisible] = useState(false);
   // const [parentFinishedMounting, setParentFinishedMounting] = useState(false);
   // const [selectedPlaylistRef, setSelectedPlaylistRef] = useState(null);
@@ -80,7 +80,7 @@ function CarouselContainer({portfolioItems, projectHover, setProjectHover}) {
 
     <div className="scrolling-wrapper" ref={wrapperRef}>
       {/* <div className='card' ><h2 ></h2></div> */}
-      {portfolioItems.map((project, index) => <Project key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover}/>)}
+      {portfolioItems.map((project, index) => <Project key={project.id} index={index} project={project} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
 
       {/* {portfolioItems.map((item, index) => <PlaylistsTitleScroll key={index} index={index} item={item} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
       {/* <div className='card' ><h2 ></h2></div> */}

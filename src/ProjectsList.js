@@ -115,7 +115,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
         </div>
       </Hover>
 
-      <CarouselContainer portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} />
+      <CarouselContainer portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>
       {/* {<Project key={projectInView.id} project={projectInView} projectHover={projectHover} setProjectHover={setProjectHover}/>} */}
 
       <Hover scale={1.05}>
