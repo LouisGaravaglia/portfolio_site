@@ -4,6 +4,7 @@ import Project from  "./Project";
 import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
+import CarouselContainer from './CarouselContainer';
 
 const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx}) => {
   const projectInView = portfolioItems[resultsIdx];
@@ -114,7 +115,8 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
         </div>
       </Hover>
 
-      {<Project key={projectInView.id} project={projectInView} projectHover={projectHover} setProjectHover={setProjectHover}/>}
+      <CarouselContainer portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} />
+      {/* {<Project key={projectInView.id} project={projectInView} projectHover={projectHover} setProjectHover={setProjectHover}/>} */}
 
       <Hover scale={1.05}>
         <div onClick={handleForwardClick} className="Forward-Arrow">

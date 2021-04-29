@@ -205,11 +205,12 @@ ion-icon {
   max-width: 400px;
 }
 
-/* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
+/* //////////////////////////////////////  CAROUSEL ////////////////////////////////////// */
 
-
+/*
 .scrolling-wrapper {
-  flex: 0 0 calc(900px);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
@@ -217,15 +218,14 @@ ion-icon {
   z-index: 10;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
   scroll-snap-type: x mandatory;
-  /* scroll-snap-align: start; */
-  user-select: none;
-  border: 2px solid pink;
+  scroll-snap-align: start;
+  border: 2px solid black;
 }
 
 .card {
-  flex: 0 0 300px;
+  width: 50vw;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,22 +237,40 @@ ion-icon {
   color: rgba(0, 0, 0, 0.089);
   margin: 0;
   scroll-snap-stop: always;
+}*/
+
+.scrolling-wrapper {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* z-index: 10; */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  border: 2px solid black;
 }
 
-.Playlists-Featured-Title {
-  flex: 0 0 300px;
-  border: 2px solid blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+  width: 100vw;
+  height: 100vh;
   scroll-snap-align: start;
-  font-family: #fff;
-  font-size: 2.2rem;
-  font-weight: 100;
   margin: 0;
   scroll-snap-stop: always;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: #fff;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.089);
+  margin: 0;
+  border: 2px solid red;
 }
-
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
 
 .Work-Title-Box {

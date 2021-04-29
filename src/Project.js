@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import Hover from "./Hover";
-import useViewport from '../Hooks/useViewport';
-import useElementOnScreen from '../Hooks/useElementOnScreen';
+import useViewport from './hooks/useViewport';
+import useElementOnScreen from './hooks/useElementOnScreen';
 import {Spring} from 'react-spring/renderprops';
 
 const Project = ({project, projectHover, setProjectHover, index}) => {
@@ -12,7 +12,7 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
     if (newWindow) newWindow.opener = null;
   };
 
-  const projectRef = useRef<any | null>(null);
+  const projectRef = useRef(null);
   let leftSideOfProjectDiv = 0;
   let rightSideOfProjectDiv = 0;
   if (projectRef.current !== null) {
@@ -30,11 +30,11 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
   });
   const isVisible = !!entry?.isIntersecting;
 
-    useEffect(() => {
-      const leftVal = projectRef.current.getBoundingClientRect().left;
+    // useEffect(() => {
+    //   const leftVal = projectRef.current.getBoundingClientRect().left;
 
-      if(selectedPlaylistIndex === index) handleScrollToSelectedProject(projectRef);
-    }, [projectRef, selectedPlaylistIndex])
+    //   if(selectedPlaylistIndex === index) handleScrollToSelectedProject(projectRef);
+    // }, [projectRef, selectedPlaylistIndex])
 
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ const Project = ({project, projectHover, setProjectHover, index}) => {
 
 
           <Hover scale={1.05}>
-          <div onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)}>
+          <div className='card' onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)}>
               {
                 projectHover &&
                 <>

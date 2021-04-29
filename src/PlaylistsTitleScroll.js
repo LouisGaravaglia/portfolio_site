@@ -1,9 +1,8 @@
 import React, {useState, useRef, useEffect, useMemo, useCallback} from 'react';
-import useViewport from '../Hooks/useViewport';
-import useElementOnScreen from '../Hooks/useElementOnScreen';
-let playlists =  require('../fakeData/playlist.json');
+import useViewport from './hooks/useViewport';
+import useElementOnScreen from './hooks/useElementOnScreen';
 
-function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistIndex, handleScrollToSelectedTitle}: Props): JSX.Element {
+function PlaylistsTitleScroll({playlist, index, parentFinishedMounting, selectedPlaylistIndex, handleScrollToSelectedTitle}) {
   // const [isVisible, setIsVisible] = useState<boolean>(false);
   const titleRef = useRef<any | null>(null);
   let leftSideOfTitleDiv = 0;
