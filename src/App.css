@@ -207,6 +207,54 @@ ion-icon {
 
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
 
+
+.scrolling-wrapper {
+  flex: 0 0 calc(900px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: none;
+  z-index: 10;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* the two items below, scroll-snaps, are for getting the slides to snap to the edges */
+  scroll-snap-type: x mandatory;
+  /* scroll-snap-align: start; */
+  user-select: none;
+  border: 2px solid pink;
+}
+
+.card {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  scroll-snap-align: start;
+  font-family: #fff;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.089);
+  margin: 0;
+  scroll-snap-stop: always;
+}
+
+.Playlists-Featured-Title {
+  flex: 0 0 300px;
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  font-family: #fff;
+  font-size: 2.2rem;
+  font-weight: 100;
+  margin: 0;
+  scroll-snap-stop: always;
+}
+
+/* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
+
 .Work-Title-Box {
   position: relative;
   text-align: center;
