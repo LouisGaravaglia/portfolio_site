@@ -28,16 +28,34 @@ const Project = ({project, portfolioItems, vieportSizeRef, projectHover, setProj
   const projectRef = useRef(null);
 
 
-  const entry = useElementOnScreen(projectRef, {
-    threshold: 0.2
+  // const fullyInViewEntry = useElementOnScreen(projectRef, {
+  //   threshold: 0.9
+  // });
+  // const fullyInView = !!fullyInViewEntry?.isIntersecting;
+
+  const partiallyInViewEntry = useElementOnScreen(projectRef, {
+    threshold: 0.4
   });
-  const isVisible = !!entry?.isIntersecting;
+  const partiallyInView = !!partiallyInViewEntry?.isIntersecting;
 
 
     useEffect(() => {
-      console.log(`useEffect ${index}`, isVisible);
-      if (isVisible) setResultsIdx(index);
-    }, [isVisible])
+      
+      if (partiallyInView) {
+        setResultsIdx(index);
+        setProjectHover(false);
+        console.log(`partial index to ${index}`);
+      }
+    }, [partiallyInView])
+
+    // useEffect(() => {
+      
+    //   if (fullyInView) {
+    //     setResultsIdx(index);
+    //     // setProjectHover(true);
+    //     console.log(`full index to ${index}`);
+    //   }
+    // }, [fullyInView])
 
   function handleProjectHover() {
     setProjectHover(true);
