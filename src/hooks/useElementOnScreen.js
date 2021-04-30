@@ -37,12 +37,3 @@ function useElementOnScreen(
 }
 
 export default useElementOnScreen
-
-// // TO USE
-// const boxRef = useRef<any | null>(null);
-// const entry = useElementOnScreen(boxRef, {
-//   root: document.querySelector('.scrolling-wrapper'),
-//   rootMargin: "0px -200px",
-//   threshold: 0.9
-// });
-// const isVisible = !!entry?.isIntersecting;

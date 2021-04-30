@@ -38,7 +38,7 @@ const Hover = ({scale, timing = 150, children}) => {
   };
 
   return (
-    <animated.span className="Hover-Box" onMouseEnter={trigger} style={style}>
+    <animated.span onMouseEnter={trigger} style={style}>
       {children}
     </animated.span>
   );

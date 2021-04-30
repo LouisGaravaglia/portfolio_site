@@ -1,6 +1,5 @@
 import React from 'react';
 import Hover from "./Hover";
-import Project from  "./Project";
 import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
@@ -115,8 +114,9 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
         </div>
       </Hover>
 
-      <CarouselContainer portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>
-      {/* {<Project key={projectInView.id} project={projectInView} projectHover={projectHover} setProjectHover={setProjectHover}/>} */}
+      <div className="scrolling-wrapper">
+        {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
+      </div>
 
       <Hover scale={1.05}>
         <div onClick={handleForwardClick} className="Forward-Arrow">
