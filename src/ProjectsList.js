@@ -91,15 +91,15 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     iconFontSize = "15px";
   }
 
-  const divStyle = {
-    position: 'absolute',
-    bottom: `${bottomVal}px`,
-    textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'nowrap'
-  };
+  // const divStyle = {
+  //   position: 'absolute',
+  //   bottom: `${bottomVal}px`,
+  //   textAlign: 'center',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   flexWrap: 'nowrap'
+  // };
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -128,15 +128,24 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
 
       </div>
 
-      <div style={divStyle}>
-        <Hover scale={1.05}>
-          <LogoGithub className="GitHub-Project" onClick={openGitHub} fontSize={iconFontSize} color="#fff" />
-        </Hover>
-        <p className="Project-Page-Number">0{resultsIdx + 1} / 0{portfolioItems.length}</p>
-        <Hover scale={1.05}>
-          <MdLaptop className="Website-Project" onClick={openSite} fontSize={iconFontSize} color="#fff" />
-        </Hover>
+<div className='Project-Info-Footer-Container'>
+      <div className='Project-Info-Footer'>
+        <div className='GitHub-Project-Box'>
+          <Hover scale={1.05}>
+            <LogoGithub className="GitHub-Project" onClick={openGitHub} fontSize={iconFontSize} color="#fff" />
+          </Hover>
+        </div>
+        <div className='Page-Number-Box'>
+          <p className="Project-Page-Number">0{resultsIdx + 1} / 0{portfolioItems.length}</p>
+        </div>
+        <div className='Website-Project-Box'>
+          <Hover scale={1.05}>
+            <MdLaptop className="Website-Project" onClick={openSite} fontSize={iconFontSize} color="#fff" />
+          </Hover>
+        </div>
+
       </div>
+</div> 
     </>
   );
 };

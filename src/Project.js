@@ -5,20 +5,7 @@ import useElementOnScreen from './hooks/useElementOnScreen';
 import {Spring} from 'react-spring/renderprops';
 
 const Project = ({project, portfolioItems, projectHover, setProjectHover, index, setResultsIdx}) => {
-  const {viewportWidth, viewportHeight} = useViewport();
-  const aspectRatio = viewportWidth / viewportHeight;
-  let gifWidth;
-  let gifHeight;
-  // console.log(aspectRatio);
-  //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
-  if (aspectRatio <= 2.358916) {
-    gifHeight = '100vh';
-    gifWidth = 'auto'
-  } else {
-    gifHeight = 'auto';
-    gifWidth = '100vw';
-  }
-  
+
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -27,28 +14,13 @@ const Project = ({project, portfolioItems, projectHover, setProjectHover, index,
   };
 
   const projectRef = useRef(null);
-  let leftSideOfProjectDiv = 0;
-  let rightSideOfProjectDiv = 0;
-  // if (projectRef.current !== null) {
-  //   const {left, right} = projectRef.current.getBoundingClientRect();
-  //   leftSideOfProjectDiv = left;
-  //   rightSideOfProjectDiv = right;
-  // }
-  // const viewportMidPoint = viewportWidth / 2;
+
 
   const entry = useElementOnScreen(projectRef, {
-    // root: document.querySelector('.scrolling-wrapper'),
-    // rootMargin: "0px -300px",
     threshold: 0.2
   });
   const isVisible = !!entry?.isIntersecting;
 
-
-    // useEffect(() => {
-    //   const leftVal = projectRef.current.getBoundingClientRect().left;
-
-    //   if(selectedPlaylistIndex === index) handleScrollToSelectedProject(projectRef);
-    // }, [projectRef, selectedPlaylistIndex])
 
     useEffect(() => {
       console.log(`useEffect ${index}`, isVisible);

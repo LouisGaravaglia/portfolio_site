@@ -54,6 +54,7 @@ html, body {
   margin: 0;
   padding: 0;
   cursor: default;
+  user-select: none;
 }
 
 .Navbar-Logo-Box {
@@ -69,11 +70,13 @@ html, body {
   margin-right: 10px;
   cursor: pointer;
   margin-bottom: -1px;
+  user-select: none;
 }
 
 .GitHub-Logo {
   cursor: pointer;
   margin-right: 10px;
+  user-select: none;
 }
 
 ion-icon {
@@ -82,6 +85,93 @@ ion-icon {
   color: #fff;
   font-size: 25px;
 }
+
+/* //////////////////////////////////////  PAGE NUMBERS ////////////////////////////////////// */
+
+.Page-Number-Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+
+}
+
+.Project-Page-Number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  padding: 0 30px 4px;
+  user-select: none;
+}
+
+.GitHub-Project-Box {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  /* border: 1px solid green; */
+}
+
+.GitHub-Project {
+  margin-right: 60px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  /* border: 1px solid rgb(128, 0, 107); */
+}
+
+.Website-Project-Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+
+.Website-Project {
+  margin-left: 60px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  /* border: 1px solid rgb(128, 0, 107); */
+}
+
+.Project-Info-Footer-Container {
+  display: flex;
+  position: fixed;
+  display: flex;
+  /* justify-content: center; */
+  bottom: 0;
+  width: 100vw;
+  justify-content: center;
+  /* border: 2px solid green; */
+}
+
+.Project-Info-Footer {
+  /* position: fixed;
+  display: flex; */
+  /* justify-content: center; */
+  /* bottom: 0; */
+  /* left: 50%; */
+  /* transform: translate(-50%, 0); */
+  display: flex;
+  z-index: 3;
+  /* width: 100vw; */
+  /* border: 2px solid blue; */
+  margin-bottom: 40px;
+  /* position: 'absolute';
+  bottom: `${bottomVal}px`; */
+  text-align: 'center';
+  justify-content: 'center';
+  align-items: 'center';
+  flex-wrap: 'nowrap';
+}
+
 
 /* //////////////////////////////////////  MAIN  ////////////////////////////////////// */
 
@@ -189,6 +279,7 @@ ion-icon {
   color: #fff;
   z-index: 6;
   margin: 10px 25px;
+  user-select: none;
 }
 
 .LYRCS-Opacity {
@@ -270,6 +361,7 @@ ion-icon {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.089);
   margin: 0;
+  user-select: none;
   /* border: 2px solid red; */
 }
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
@@ -295,27 +387,6 @@ ion-icon {
   padding: 0;
 }
 
-/* //////////////////////////////////////  PAGE NUMBERS ////////////////////////////////////// */
-
-.Project-Page-Number {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: 200;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  cursor: default;
-}
-
-.GitHub-Project {
-  margin-right: 60px;
-  cursor: pointer;
-}
-
-.Website-Project {
-  margin-left: 60px;
-  cursor: pointer;
-}
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
