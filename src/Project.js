@@ -86,50 +86,27 @@ const Project = ({project, portfolioItems, vieportSizeRef, projectHover, setProj
 
   return (
     <>
-    <Spring
+    {/* <Spring
       from={{opacity: 0}}
       to={{opacity: 1}}
-      config={{delay: 100, duration: 100}}
+      config={{delay: 1000, duration: 1000}}
     >
-      {props => (
-        <div style={props} ref={projectRef}>
+      {props => ( */}
+        <div ref={projectRef}>
 
 
           {/* <Hover scale={1.05} > */}
-
-              {
-                projectHover &&
-                <div className='card'>
-                  <div className="Work-Summary-Container" style={cursorInsideDiv ? boxStyles : {}} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
-                    <div className="Work-Summary-Box">
-                      <div className={`Work-Summary-Background`}></div>
-                      <p className="Work-Summary-Text">{project.summary}</p>
-                    </div>
+              <div className='card'>
+                  <div className="Work-Summary-Box" style={cursorInsideDiv ? boxStyles : {}} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
+                    {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
                   </div>
-                  {/* <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -20, left: '0', display: 'flex', justifyContent: 'center', alignSelf: 'center'}} loop={true} autoPlay="autoplay" muted>
-                    <source src={project.gif} type="video/mp4" />
-                  </video> */}
-                </div>
-              }
-              
-              {
-                !projectHover &&
-                <div className='card' >
-                  <div onClick={openInNewTab} className="Work-Title-Box" style={cursorInsideDiv ? boxStyles : {}} onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
-                    <p className="Work-Title">{project.title}</p>
-                  </div>
-                  {/* <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -20, left: '0', display: 'flex', justifyContent: 'center', alignSelf: 'center'}} loop={true} autoPlay="autoplay" muted>
-                    <source src={project.gif} type="video/mp4" />
-                  </video> */}
-                </div>
-              }
-
+              </div>
           {/* </Hover> */}
 
 
         </div>
-      )}
-    </Spring>
+      {/* )}
+    </Spring> */}
     </>
   );
 };

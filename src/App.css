@@ -237,7 +237,7 @@ ion-icon {
 
 
 
-.Work-Summary-Container {
+/* .Work-Summary-Container {
   position: relative;
   text-align: center;
   display: flex;
@@ -248,11 +248,22 @@ ion-icon {
   width: 400px;
   max-width: 400px;
   cursor: pointer;
-  /* background-color: #fff; */
-  /* border: 2px solid transparent; */
   border: 2px solid #fff;
-  /* background-color: #fff; */
-}
+} */
+
+
+/* .Work-Title-Box {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #fff;
+} */
+
 
 .Work-Summary-Box{
   position: relative;
@@ -262,19 +273,20 @@ ion-icon {
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  top:0;
-  left: 0;
+  /* top:0;
+  left: 0; */
   height: 400px;
   width: 400px;
-  max-width: 400px;
+  /* max-width: 400px; */
+  border: 2px solid #fff;
   cursor: pointer;
 }
 
-.Work-Summary-Background {
+/* .Work-Summary-Background {
   position: absolute;
   height: 400px;
   width: 400px;
-}
+} */
 
 .Work-Summary-Text {
   font-family: 'Montserrat', sans-serif;
@@ -301,6 +313,30 @@ ion-icon {
 .Work-Gif {
   max-width: 400px;
 }
+
+/* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
+
+.Work-Title-Box {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #fff;
+}
+
+.Work-Title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
 
 /* //////////////////////////////////////  CAROUSEL ////////////////////////////////////// */
 
@@ -377,28 +413,6 @@ ion-icon {
   margin: 0;
   user-select: none;
   /* border: 2px solid red; */
-}
-/* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
-
-.Work-Title-Box {
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
-  border: 2px solid #fff;
-}
-
-.Work-Title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-  padding: 0;
 }
 
 
