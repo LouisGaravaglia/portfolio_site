@@ -1,11 +1,23 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import Hover from "./Hover";
 import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
+import useMousePosition from './hooks/useMousePosition';
 import {Spring} from 'react-spring/renderprops';
 
-const Project = ({project, portfolioItems, projectHover, setProjectHover, index, setResultsIdx}) => {
+const Project = ({project, portfolioItems, vieportSizeRef, projectHover, setProjectHover, index, setResultsIdx}) => {
+  const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
+  const {viewportWidth, viewportHeight} = useViewport();
+  const [cursorInsideDiv, setCursorInsideDiv] = useState(true);
+  const [bottom, setBottom] = useState(0);
+  const [right, setRight] = useState(0);
+  const parentRef = useRef();
 
+
+  const horizontalMidPointOfDiv = viewportWidth / 2;
+  const verticalMidPointOfDiv = viewportHeight / 2;
+  const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
+  const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -32,6 +44,25 @@ const Project = ({project, portfolioItems, projectHover, setProjectHover, index,
     setResultsIdx(index);
   }
 
+  function handleMouseEnterParent() {
+    // setCursorInsideDiv(true);
+    // const {bottom, right} = vieportSizeRef.current.getBoundingClientRect();
+    // console.log("bottom", bottom);
+    // console.log("right", right);
+    // setBottom(bottom);
+    // setRight(right);
+    
+  }
+
+  // function handleMouseLeaveParent() {
+  //   setCursorInsideDiv(false);
+  //   setProjectHover(false)
+  // }
+
+  const boxStyles = {
+    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
+  }
+
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -50,8 +81,8 @@ const Project = ({project, portfolioItems, projectHover, setProjectHover, index,
 
               {
                 projectHover &&
-                <div className='card' >
-                  <div className="Work-Summary-Container" onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
+                <div className='card'>
+                  <div className="Work-Summary-Container" style={cursorInsideDiv ? boxStyles : {}} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
                     <div className="Work-Summary-Box">
                       <div className={`Work-Summary-Background`}></div>
                       <p className="Work-Summary-Text">{project.summary}</p>
@@ -65,8 +96,8 @@ const Project = ({project, portfolioItems, projectHover, setProjectHover, index,
               
               {
                 !projectHover &&
-                <div className='card'>
-                  <div onClick={openInNewTab} className="Work-Title-Box" onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
+                <div className='card' >
+                  <div onClick={openInNewTab} className="Work-Title-Box" style={cursorInsideDiv ? boxStyles : {}} onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
                     <p className="Work-Title">{project.title}</p>
                   </div>
                   {/* <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -20, left: '0', display: 'flex', justifyContent: 'center', alignSelf: 'center'}} loop={true} autoPlay="autoplay" muted>
@@ -74,7 +105,6 @@ const Project = ({project, portfolioItems, projectHover, setProjectHover, index,
                   </video> */}
                 </div>
               }
-
 
           {/* </Hover> */}
 

@@ -11,7 +11,7 @@ function CarouselContainer({portfolioItems, projectHover, setProjectHover, setRe
   // const {viewportWidth}  = useViewport();
   // const titleRef = useRef(null);
   const wrapperRef = useRef(null);
-
+  const viewportSizeRef = useRef();
   // function observeTitlesInView(index) {
   //   console.log('index in view: ', index);
     
@@ -80,11 +80,11 @@ function CarouselContainer({portfolioItems, projectHover, setProjectHover, setRe
 
     <div className="scrolling-wrapper" ref={wrapperRef}>
       {/* <div className='card' ><h2 ></h2></div> */}
-      {portfolioItems.map((project, index) => <Project key={project.id} index={index} project={project} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
+      {portfolioItems.map((project, index) => <Project key={project.id} index={index} viewportSizeRef={viewportSizeRef} project={project} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
 
       {/* {portfolioItems.map((item, index) => <PlaylistsTitleScroll key={index} index={index} item={item} parentFinishedMounting={parentFinishedMounting} selectedPlaylistIndex={selectedPlaylistIndex} handleScrollToSelectedTitle={handleScrollToSelectedTitle}/>)} */}
       {/* <div className='card' ><h2 ></h2></div> */}
-
+      {/* <div className="Carousel-Container-Viewport" ref={viewportSizeRef}> </div> */}
     </div>
     // </div>
 

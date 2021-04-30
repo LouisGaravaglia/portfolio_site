@@ -132,7 +132,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
       <div className='Project-Info-Footer'>
         <div className='GitHub-Project-Box'>
           <Hover scale={1.05}>
-            <LogoGithub className="GitHub-Project" onClick={openGitHub} fontSize={iconFontSize} color="#fff" />
+            <LogoGithub className="GitHub-Project" onClick={openGitHub} fontSize='2rem' color="#fff" />
           </Hover>
         </div>
         <div className='Page-Number-Box'>
@@ -140,7 +140,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
         </div>
         <div className='Website-Project-Box'>
           <Hover scale={1.05}>
-            <MdLaptop className="Website-Project" onClick={openSite} fontSize={iconFontSize} color="#fff" />
+            <MdLaptop className="Website-Project" onClick={openSite} fontSize='2rem' color="#fff" />
           </Hover>
         </div>
 
