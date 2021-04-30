@@ -40,9 +40,9 @@ const NavBar = () => {
           <Hover scale={1.05}>
             <LogoGithub className="GitHub-Logo" onClick={openGitHub} fontSize="25px" color="#fff" />
           </Hover>
-          <Hover scale={1.05}>
+          {/* <Hover scale={1.05}>
             <ion-icon onClick={openInstagram} name="logo-instagram"></ion-icon>
-          </Hover>
+          </Hover> */}
         </div>
       </div>
     </>

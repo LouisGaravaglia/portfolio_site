@@ -248,8 +248,10 @@ ion-icon {
   width: 400px;
   max-width: 400px;
   cursor: pointer;
+  /* background-color: #fff; */
   /* border: 2px solid transparent; */
   border: 2px solid #fff;
+  /* background-color: #fff; */
 }
 
 .Work-Summary-Box{
@@ -278,7 +280,9 @@ ion-icon {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
-  color: #fff;
+  mix-blend-mode: multiply;
+  color: white;
+  /* background: black; */
   z-index: 6;
   margin: 10px 25px;
   user-select: none;
