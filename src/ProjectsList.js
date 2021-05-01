@@ -106,25 +106,26 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     <>
       <div className="Project-Container" >
 
-      <Hover scale={1.05}>
+      {/* <Hover scale={1.05}>
         <div onClick={handleBackClick} className="Back-Arrow">
           <span class="material-icons">
             navigate_before
           </span>
         </div>
-      </Hover>
+      </Hover> */}
 
       <div className="scrolling-wrapper">
         {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
       </div>
 
-      <Hover scale={1.05}>
+
+      {/* <Hover scale={1.05}>
         <div onClick={handleForwardClick} className="Forward-Arrow">
           <span class="material-icons">
             navigate_next
           </span>
         </div>
-      </Hover>
+      </Hover> */}
 
       </div>
 

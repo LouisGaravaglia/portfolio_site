@@ -430,9 +430,20 @@ ion-icon {
   cursor: pointer;
 }
 
-.Forward-Arrow {
-  margin-left: 100px;
+ion-icon {
+  font-size: 100px;
 }
+
+.Forward-Arrow-Box {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  /* border: 4px solid yellow; */
+}
+
 
 .Back-Arrow {
   margin-right: 100px;

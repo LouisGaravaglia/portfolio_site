@@ -3,6 +3,7 @@ import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
 import useViewport from "./hooks/useViewport"
+import NextArrow from './NextArrow';
 import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
 import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
@@ -86,6 +87,7 @@ function Portfolio() {
         <div style={props}>
 
           <div className="Main-Container" style={{background: mainBackground}}>
+          <NextArrow />
             <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} resultsIdx={resultsIdx} setResultsIdx={setResultsIdx}/>
             {gifBackground}
           </div>
