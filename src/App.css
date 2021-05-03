@@ -199,6 +199,10 @@ ion-icon {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: 100vh;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
 }
 
 /* //////////////////////////////////////  PROJECT SUMMARY ////////////////////////////////////// */
@@ -410,6 +414,9 @@ ion-icon {
   position: relative;
   flex: 0 0 100vw;
   height: 100%;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
