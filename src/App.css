@@ -280,6 +280,7 @@ ion-icon {
   /* max-width: 400px; */
   border: 2px solid #fff;
   cursor: pointer;
+  transition: 0.6s ease-out;
 }
 
 /* .Work-Summary-Background {
@@ -418,11 +419,11 @@ ion-icon {
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
-.material-icons {
+/* .material-icons {
   font-size: 100px;
   color: #fff;
   cursor: pointer;
-}
+} */
 
 .logo {
   font-size: 20px;
@@ -487,25 +488,25 @@ ion-icon {
     max-width: 300px;
   }
 
-  .material-icons {
+  /* .material-icons {
     font-size: 80px;
-  }
+  } */
 
-  .Forward-Arrow {
+  /* .Forward-Arrow {
     margin-left: 50px;
   }
 
   .Back-Arrow {
     margin-right: 50px;
-  }
+  } */
 
-  .GitHub-Project {
+  /* .GitHub-Project {
     margin-right: 40px;
   }
 
   .Website-Project {
     margin-left: 40px;
-  }
+  } */
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 580PX ////////////////////////////////////// */
@@ -546,29 +547,29 @@ ion-icon {
     max-width: 200px;
   }
 
-  .material-icons {
+  /* .material-icons {
     font-size: 50px;
-  }
+  } */
 
-  .Forward-Arrow {
+  /* .Forward-Arrow {
     margin-left: 50px;
   }
 
   .Back-Arrow {
     margin-right: 50px;
-  }
+  } */
 
-  .Project-Page-Number {
+  /* .Project-Page-Number {
     font-size: 1.6rem;
-  }
+  } */
 
-  .GitHub-Project {
+  /* .GitHub-Project {
     margin-right: 30px;
   }
 
   .Website-Project {
     margin-left: 30px;
-  }
+  } */
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 400PX ////////////////////////////////////// */
@@ -609,21 +610,21 @@ ion-icon {
     max-width: 150px;
   }
 
-  .material-icons {
+  /* .material-icons {
     font-size: 30px;
-  }
+  } */
 
-  .Forward-Arrow {
+  /* .Forward-Arrow {
     margin-left: 20px;
   }
 
   .Back-Arrow {
     margin-right: 20px;
-  }
+  } */
 
-  .Project-Page-Number {
+  /* .Project-Page-Number {
     font-size: 1rem;
-  }
+  } */
 
   .Navbar-Logo-Box {
     margin-right: 10px;
@@ -633,12 +634,12 @@ ion-icon {
     margin-left: 10px;
   }
 
-  .GitHub-Project {
+  /* .GitHub-Project {
     margin-right: 20px;
   }
 
   .Website-Project {
     margin-left: 20px;
-  }
+  } */
 }
 

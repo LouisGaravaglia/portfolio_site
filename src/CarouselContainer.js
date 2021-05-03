@@ -45,7 +45,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   // }, [cursorHorizontalPosition, cursorVerticalPosition])
 
   const boxStyles = {
-    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`, transition: '0.6s ease-out',
+    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
   }
 
 

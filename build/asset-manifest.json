@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb37848c.chunk.css",
+    "main.js": "/static/js/main.a6cd206c.chunk.js",
+    "main.js.map": "/static/js/main.a6cd206c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3977b8bf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3977b8bf.js.map",
+    "static/js/2.d1b7403e.chunk.js": "/static/js/2.d1b7403e.chunk.js",
+    "static/js/2.d1b7403e.chunk.js.map": "/static/js/2.d1b7403e.chunk.js.map",
+    "static/js/3.0b735922.chunk.js": "/static/js/3.0b735922.chunk.js",
+    "static/js/3.0b735922.chunk.js.map": "/static/js/3.0b735922.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.eb37848c.chunk.css.map": "/static/css/main.eb37848c.chunk.css.map",
+    "static/js/2.d1b7403e.chunk.js.LICENSE.txt": "/static/js/2.d1b7403e.chunk.js.LICENSE.txt",
+    "static/media/ACOUSTIC.9473cb10.mp4": "/static/media/ACOUSTIC.9473cb10.mp4",
+    "static/media/LYRCS.329b23b1.mp4": "/static/media/LYRCS.329b23b1.mp4",
+    "static/media/WINENOT.b60f2743.mp4": "/static/media/WINENOT.b60f2743.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3977b8bf.js",
+    "static/js/2.d1b7403e.chunk.js",
+    "static/css/main.eb37848c.chunk.css",
+    "static/js/main.a6cd206c.chunk.js"
+  ]
+}
