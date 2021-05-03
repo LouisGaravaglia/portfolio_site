@@ -12,6 +12,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   const verticalMidPointOfDiv = viewportHeight / 2;
   const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
   const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
+  const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -38,8 +39,13 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     setResultsIdx(index);
   }
 
+  // useEffect(() => {
+  //   if 
+  //   // setProjectDisplayedInCenter(false)
+  // }, [cursorHorizontalPosition, cursorVerticalPosition])
+
   const boxStyles = {
-    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
+    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`, transition: '0.6s ease-out',
   }
 
 
@@ -48,8 +54,8 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   return (
     <div ref={projectRef}>
       {/* <Hover scale={1.05} > */}
-          <div className='card'>
-            <div className="Work-Summary-Box" style={boxStyles} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)}>
+          <div className='card' onMouseMove={() => setProjectDisplayedInCenter(false)}>
+            <div className="Work-Summary-Box" style={projectDisplayedInCenter ? {} : boxStyles} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
               {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
             </div>
           </div>
