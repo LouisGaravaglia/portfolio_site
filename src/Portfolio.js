@@ -7,6 +7,7 @@ import NextArrow from './NextArrow';
 import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
 import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
+import SMARTREACH_GIF from "./images/SMARTREACH.mp4";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
@@ -47,6 +48,15 @@ function Portfolio() {
     },
     {
       id: 3,
+      title: "The Smart Reach",
+      gif: SMARTREACH_GIF,
+      link: "https://www.thesmartreach.org/",
+      githubLink: "https://github.com/jamiesonreinhard/bridger-front-end",
+      summary: "The Smart Reach is a website for a non-profit that matches at-risk youth with volunteer tutors. Founding engineering team member. Tech Stack: React | SASS | Ruby on Rails",
+      classname: "LYRCS-Opacity"
+    },
+    {
+      id: 4,
       title: "Wine-not!",
       gif: WINENOT_GIF,
       link: "https://findwinenot.herokuapp.com/",

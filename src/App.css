@@ -9,22 +9,6 @@ html, body {
   overscroll-behavior: none;
 }
 
-/* .video-background-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.video-background {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-} */
-
 
 /* //////////////////////////////////////  NAVBAR  ////////////////////////////////////// */
 
@@ -112,8 +96,6 @@ ion-icon {
 
 .GitHub-Project-Box {
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
   align-items: center;
   /* border: 1px solid green; */
 }
@@ -148,7 +130,6 @@ ion-icon {
   display: flex;
   position: fixed;
   display: flex;
-  /* justify-content: center; */
   bottom: 0;
   width: 100vw;
   justify-content: center;
@@ -156,19 +137,9 @@ ion-icon {
 }
 
 .Project-Info-Footer {
-  /* position: fixed;
-  display: flex; */
-  /* justify-content: center; */
-  /* bottom: 0; */
-  /* left: 50%; */
-  /* transform: translate(-50%, 0); */
   display: flex;
   z-index: 3;
-  /* width: 100vw; */
-  /* border: 2px solid blue; */
   margin-bottom: 40px;
-  /* position: 'absolute';
-  bottom: `${bottomVal}px`; */
   text-align: 'center';
   justify-content: 'center';
   align-items: 'center';
@@ -188,7 +159,6 @@ ion-icon {
   flex-wrap: nowrap;
   width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(to right, #63a198 0%, #8874c2 100%); */
 }
 
 /* //////////////////////////////////////  DISPLAY PROJECT ////////////////////////////////////// */
@@ -211,29 +181,6 @@ ion-icon {
 
 /* //////////////////////////////////////  PROJECT SUMMARY ////////////////////////////////////// */
 
-/* .video-background-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.video-background {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-} */
-
-/* .Work-Gif-Container {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index: -10;
-} */
-
 .Work-Gif-Box {
   position: absolute;
   background-color: rgb(0, 27, 34);
@@ -243,36 +190,6 @@ ion-icon {
   z-index: -10;
 }
 
-
-
-/* .Work-Summary-Container {
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 400px;
-  width: 400px;
-  max-width: 400px;
-  cursor: pointer;
-  border: 2px solid #fff;
-} */
-
-
-/* .Work-Title-Box {
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
-  border: 2px solid #fff;
-} */
-
-
 .Work-Summary-Box{
   position: relative;
   text-align: center;
@@ -281,21 +198,12 @@ ion-icon {
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  /* top:0;
-  left: 0; */
   height: 400px;
   width: 400px;
-  /* max-width: 400px; */
   border: 2px solid #fff;
   cursor: pointer;
   transition: 0.6s ease-out;
 }
-
-/* .Work-Summary-Background {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-} */
 
 .Work-Summary-Text {
   font-family: 'Montserrat', sans-serif;
@@ -303,7 +211,6 @@ ion-icon {
   font-size: 1.6rem;
   mix-blend-mode: multiply;
   color: white;
-  /* background: black; */
   z-index: 6;
   margin: 10px 25px;
   user-select: none;
@@ -317,12 +224,9 @@ ion-icon {
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  /* top:0;
-  left: 0; */
   height: calc(100% - 350px);
   width: calc(100% - 80px);
   min-height: 150px;
-  /* max-width: 400px; */
   border: 2px solid #fff;
   cursor: pointer;
 }
@@ -346,10 +250,6 @@ ion-icon {
   background-color: #3a78d5;
   opacity: 0.7;
 }
-
-/* .Work-Gif {
-  max-width: 400px;
-} */
 
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
 
@@ -376,44 +276,6 @@ ion-icon {
 
 
 /* //////////////////////////////////////  CAROUSEL ////////////////////////////////////// */
-
-/*
-.scrolling-wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: none;
-  z-index: 10;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scroll-snap-type: x mandatory;
-  scroll-snap-align: start;
-  border: 2px solid black;
-}
-
-.card {
-  width: 50vw;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid red;
-  scroll-snap-align: start;
-  font-family: #fff;
-  font-weight: 100;
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.089);
-  margin: 0;
-  scroll-snap-stop: always;
-}*/
-
-/* .Carousel-Container-Viewport {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-} */
 
 .scrolling-wrapper {
   position: relative;
@@ -454,12 +316,6 @@ ion-icon {
 
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
-
-/* .material-icons {
-  font-size: 100px;
-  color: #fff;
-  cursor: pointer;
-} */
 
 .logo {
   font-size: 20px;
@@ -520,29 +376,6 @@ ion-icon {
     font-size: 1.2rem;
   }
 
-  /* .Work-Gif {
-    max-width: 300px;
-  } */
-
-  /* .material-icons {
-    font-size: 80px;
-  } */
-
-  /* .Forward-Arrow {
-    margin-left: 50px;
-  }
-
-  .Back-Arrow {
-    margin-right: 50px;
-  } */
-
-  /* .GitHub-Project {
-    margin-right: 40px;
-  }
-
-  .Website-Project {
-    margin-left: 40px;
-  } */
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 580PX ////////////////////////////////////// */
@@ -579,88 +412,11 @@ ion-icon {
     font-size: 0.8rem;
   }
 
-  /* .Work-Gif {
-    max-width: 200px;
-  } */
-
-  /* .material-icons {
-    font-size: 50px;
-  } */
-
-  /* .Forward-Arrow {
-    margin-left: 50px;
-  }
-
-  .Back-Arrow {
-    margin-right: 50px;
-  } */
-
-  /* .Project-Page-Number {
-    font-size: 1.6rem;
-  } */
-
-  /* .GitHub-Project {
-    margin-right: 30px;
-  }
-
-  .Website-Project {
-    margin-left: 30px;
-  } */
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 400PX ////////////////////////////////////// */
 
 @media only screen and (max-width: 400px), screen and (max-height: 325px) {
-
-  /* .Work-Title {
-    font-size: 1.2rem;
-  }
-
-  .Work-Title-Box {
-    width: 150px;
-    height: 150px;
-  }
-
-  .Work-Summary-Container {
-    height: 150px;
-    width: 150px;
-    max-width: 150px;
-  }
-
-  .Work-Summary-Box{
-    height: 150px;
-    width: 150px;
-    max-width: 150px;
-  }
-
-  .Work-Summary-Background {
-    height: 150px;
-    width: 150px;
-  }
-
-  .Work-Summary-Text {
-    font-size: 0.6rem;
-  }
-
-  .Work-Gif {
-    max-width: 150px;
-  } */
-
-  /* .material-icons {
-    font-size: 30px;
-  } */
-
-  /* .Forward-Arrow {
-    margin-left: 20px;
-  }
-
-  .Back-Arrow {
-    margin-right: 20px;
-  } */
-
-  /* .Project-Page-Number {
-    font-size: 1rem;
-  } */
 
   .Navbar-Logo-Box {
     margin-right: 10px;
@@ -670,12 +426,5 @@ ion-icon {
     margin-left: 20px;
   }
 
-  /* .GitHub-Project {
-    margin-right: 20px;
-  }
-
-  .Website-Project {
-    margin-left: 20px;
-  } */
 }
 
