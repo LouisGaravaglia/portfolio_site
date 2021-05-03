@@ -5,6 +5,7 @@ html, body {
   margin: 0px;
   padding: 0px !important;
   overflow-x: hidden; 
+  overflow-y: hidden; 
   overscroll-behavior: none;
 }
 
@@ -203,6 +204,9 @@ ion-icon {
   height: -webkit-fill-available;
   min-height: -webkit-fill-available;
   max-height: -webkit-fill-available;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overscroll-behavior: none;
 }
 
 /* //////////////////////////////////////  PROJECT SUMMARY ////////////////////////////////////// */
@@ -420,11 +424,12 @@ ion-icon {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-snap-type: x mandatory;
-
+  overscroll-behavior: none;
   /* border: 2px solid black; */
 }
 
