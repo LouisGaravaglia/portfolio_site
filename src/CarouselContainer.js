@@ -55,13 +55,25 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     </div>
   );
 
+  // const mobileJSX = (
+  //   <div className='card'>
+  //     <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
+  //       <p className="Work-Summary-Text-Mobile">{project.summary}</p>
+  //     </div>
+  //   </div>
+  // )
+
   const mobileJSX = (
     <div className='card'>
-      <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
-        <p className="Work-Summary-Text-Mobile">{project.summary}</p>
+      <div className="Work-Mobile-Container">
+        <p className="Work-Title-Mobile">{project.title}</p>
+          <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
+            <p className="Work-Summary-Text-Mobile">{project.summary}</p>
+          </div>
       </div>
     </div>
   )
+
 
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////

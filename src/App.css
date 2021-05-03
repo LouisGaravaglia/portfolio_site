@@ -216,6 +216,19 @@ ion-icon {
   user-select: none;
 }
 
+
+
+.Work-Mobile-Container {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
 .Work-Summary-Box-Mobile {
   position: relative;
   text-align: center;
@@ -223,7 +236,7 @@ ion-icon {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  position: absolute;
+  /* position: absolute; */
   height: calc(100% - 350px);
   width: calc(100% - 80px);
   min-height: 150px;
@@ -238,6 +251,16 @@ ion-icon {
   color: white;
   z-index: 6;
   margin: 10px 25px;
+  user-select: none;
+}
+
+.Work-Title-Mobile {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 6;
+  margin: 10px 5px;
   user-select: none;
 }
 
