@@ -8,6 +8,7 @@ import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
 import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
 import SMARTREACH_GIF from "./images/SMARTREACH.mp4";
+import PORTFOLIOSITE_GIF from "./images/PORTFOLIOSITE.mp4";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
@@ -62,6 +63,15 @@ function Portfolio() {
       link: "https://findwinenot.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/Wine-not",
       summary: "Would you like something new to drink? Wine-Not! A web app that allows users to find new Wines to enjoy. Tech Stack: Javascript | Python | Flask | PostgreSQL | Bulma",
+      classname: "Wine-Not-Opacity"
+    },
+    {
+      id: 5,
+      title: "Portfolio site",
+      gif: PORTFOLIOSITE_GIF,
+      link: "https://louis-garavaglia.netlify.app/",
+      githubLink: "https://github.com/LouisGaravaglia/portfolio_site",
+      summary: "A clean and interactive site that puts the focus on the projects. Designed with a mobile-first approach. Tech Stack: React",
       classname: "Wine-Not-Opacity"
     }
   ];
