@@ -14,8 +14,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
   const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
   const [mobileMode, setMobileMode] = useState(false);
-  // console.log('viewportWidth');
-  // console.log('viewportHeight', viewportHeight);
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -43,8 +41,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   }
 
   useEffect(() => {
-    console.log('viewportWidth', viewportWidth);
-    console.log('viewportHeight', viewportHeight);
     if (viewportWidth < 580 || viewportHeight < 480) setMobileMode(true);
     if (viewportWidth > 580 && viewportHeight > 480) setMobileMode(false);
   }, [viewportWidth, viewportHeight])
@@ -74,15 +70,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
 
   return (
     <div ref={projectRef}>
-
-          {/* <div className='card' onMouseMove={() => setProjectDisplayedInCenter(false)}>
-            <div className="Work-Summary-Box" style={projectDisplayedInCenter ? {} : boxStyles} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
-              {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
-            </div>
-          </div> */}
-
           {mobileMode ? mobileJSX : desktopJSX}
-
     </div>
   );
 };
