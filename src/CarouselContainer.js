@@ -1,5 +1,4 @@
 import React, {useRef, useEffect, useState} from 'react';
-import Hover from "./Hover";
 import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
 import useMousePosition from './hooks/useMousePosition';

@@ -321,6 +321,7 @@ ion-icon {
   left: 0; */
   height: calc(100% - 350px);
   width: calc(100% - 80px);
+  min-height: 150px;
   /* max-width: 400px; */
   border: 2px solid #fff;
   cursor: pointer;
