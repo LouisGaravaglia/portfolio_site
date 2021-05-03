@@ -63,7 +63,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
 
   const mobileJSX = (
     <div className='card'>
-      <div className="Work-Summary-Box-Mobile" >
+      <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
         <p className="Work-Summary-Text-Mobile">{project.summary}</p>
       </div>
     </div>
