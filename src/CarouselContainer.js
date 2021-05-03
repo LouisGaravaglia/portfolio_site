@@ -30,9 +30,8 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     if (partiallyInView) {
       setResultsIdx(index);
       setProjectHover(false);
-      console.log(`partial index to ${index}`);
     }
-  }, [partiallyInView])
+  }, [partiallyInView, index, setResultsIdx, setProjectHover])
 
   function handleProjectHover() {
     setProjectHover(true);

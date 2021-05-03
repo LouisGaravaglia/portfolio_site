@@ -17,10 +17,10 @@ const NavBar = () => {
     if (newWindow) newWindow.opener = null;
   };
 
-  const openInstagram = () => {
-    const newWindow = window.open("https://www.instagram.com/louisgaravaglia/", '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null;
-  };
+  // const openInstagram = () => {
+  //   const newWindow = window.open("https://www.instagram.com/louisgaravaglia/", '_blank', 'noopener,noreferrer')
+  //   if (newWindow) newWindow.opener = null;
+  // };
 
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////

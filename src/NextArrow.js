@@ -7,7 +7,6 @@ const NextArrow = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setRemovingArrow(true)
-      console.log('This will run after 1 second!')
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
@@ -26,7 +25,7 @@ const NextArrow = () => {
     >
       {props => (
         <div style={props}>
-          <div className="Forward-Arrow-Box" on>
+          <div className="Forward-Arrow-Box">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </div>
         </div>

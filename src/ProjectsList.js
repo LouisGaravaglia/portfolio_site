@@ -1,6 +1,6 @@
 import React from 'react';
 import Hover from "./Hover";
-import useViewport from "./hooks/useViewport"
+// import useViewport from "./hooks/useViewport"
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 import CarouselContainer from './CarouselContainer';
