@@ -242,6 +242,7 @@ ion-icon {
   min-height: 150px;
   border: 2px solid #fff;
   cursor: pointer;
+  margin-bottom: 60px;
 }
 
 .Work-Summary-Text-Mobile {
@@ -252,6 +253,7 @@ ion-icon {
   z-index: 6;
   margin: 10px 25px;
   user-select: none;
+
 }
 
 .Work-Title-Mobile {

@@ -39,8 +39,8 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   }
 
   useEffect(() => {
-    if (viewportWidth < 580 || viewportHeight < 480) setMobileMode(true);
-    if (viewportWidth > 580 && viewportHeight > 480) setMobileMode(false);
+    if (viewportWidth < 600 || viewportHeight < 900) setMobileMode(true);
+    if (viewportWidth > 600 && viewportHeight > 900) setMobileMode(false);
   }, [viewportWidth, viewportHeight])
 
   const boxStyles = {
