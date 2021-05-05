@@ -19,9 +19,6 @@ const NextArrow = () => {
       from={{opacity: removingArrow ? 1 : 0}}
       to={{opacity: removingArrow ? 0 : 1}}
       config={{delay: 0, duration: 1500}}
-      // from={{opacity: 1}}
-      // to={{opacity: 1}}
-      // config={{delay: 0, duration: 0}}
     >
       {props => (
         <div style={props}>

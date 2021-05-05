@@ -33,7 +33,7 @@ function Portfolio() {
       id: 1,
       title: "Acoustic.io",
       gif: ACOUSTIC_GIF,
-      link: "http://www.acoustigram.io/",
+      link: "https://acoustigram-io.herokuapp.com/",
       githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
       summary: "***CURRENTLY IN DEVELOPMENT*** Acoustic.io is a web app that will use AI to create playlists for you of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
       classname: "LYRCS-Opacity"

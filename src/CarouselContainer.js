@@ -31,21 +31,21 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
       setResultsIdx(index);
       setProjectHover(false);
     }
-  }, [partiallyInView, index, setResultsIdx, setProjectHover])
+  }, [partiallyInView, index, setResultsIdx, setProjectHover]);
 
   function handleProjectHover() {
     setProjectHover(true);
     setResultsIdx(index);
-  }
+  };
 
   useEffect(() => {
-    if (viewportWidth < 600 || viewportHeight < 900) setMobileMode(true);
-    if (viewportWidth > 600 && viewportHeight > 900) setMobileMode(false);
-  }, [viewportWidth, viewportHeight])
+    if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
+    if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
+  }, [viewportWidth, viewportHeight]);
 
   const boxStyles = {
     transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
-  }
+  };
 
   const desktopJSX = (
     <div className='card' onMouseMove={() => setProjectDisplayedInCenter(false)}>
@@ -54,14 +54,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
       </div>
     </div>
   );
-
-  // const mobileJSX = (
-  //   <div className='card'>
-  //     <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
-  //       <p className="Work-Summary-Text-Mobile">{project.summary}</p>
-  //     </div>
-  //   </div>
-  // )
 
   const mobileJSX = (
     <div className='card'>
@@ -72,9 +64,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
           </div>
       </div>
     </div>
-  )
-
-
+  );
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
