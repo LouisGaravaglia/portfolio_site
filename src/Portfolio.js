@@ -31,11 +31,11 @@ function Portfolio() {
   const portfolioItems = [
     {
       id: 1,
-      title: "Acoustic.io",
+      title: "Acoustigram.io",
       gif: ACOUSTIC_GIF,
-      link: "https://acoustigram-io.herokuapp.com/",
+      link: "http://www.acoustigram.io/",
       githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
-      summary: "***CURRENTLY IN DEVELOPMENT*** Acoustic.io is a web app that will use AI to create playlists for you of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
+      summary: "***CURRENTLY IN DEVELOPMENT*** Acoustigram.io is a web app that will use AI to create playlists of new music releases it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
       classname: "LYRCS-Opacity"
     },
     {
