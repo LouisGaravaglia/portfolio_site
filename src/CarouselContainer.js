@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, memo} from 'react';
 // import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
@@ -24,21 +24,15 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     threshold: 0.4
   });
   const partiallyInView = !!partiallyInViewEntry?.isIntersecting;
-
+  
   useEffect(() => {
-    
     if (partiallyInView) {
       setResultsIdx(index);
       setProjectHover(false);
     }
   }, [partiallyInView, index, setResultsIdx, setProjectHover]);
 
-  function handleProjectHover() {
-    setProjectHover(true);
-    setResultsIdx(index);
-  };
-
-  console.log(project);
+  // console.log(project);
 
   // useEffect(() => {
   //   if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
@@ -74,7 +68,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     <div ref={projectRef}>
       {/* {mobileMode ? mobileJSX : desktopJSX} */}
       <div className='card'>
-        <div className="Work-Summary-Box" onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
+        <div className="Work-Summary-Box" onClick={openInNewTab}  onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)} >
           {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
         </div>
       </div>
@@ -82,4 +76,4 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   );
 };
 
-export default CarouselContainer;
+export default memo(CarouselContainer);

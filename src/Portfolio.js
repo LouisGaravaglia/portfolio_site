@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
@@ -17,6 +17,8 @@ function Portfolio() {
   const aspectRatio = viewportWidth / viewportHeight;
   let gifWidth;
   let gifHeight;
+  const memoizedSetProjectHover = useCallback(bool => setProjectHover(bool), []);
+  const memoizedSetResultsIdx = useCallback(num => setResultsIdx(num), []);
 
   //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
   if (aspectRatio <= 2.358916) {
@@ -26,7 +28,6 @@ function Portfolio() {
     gifHeight = 'auto';
     gifWidth = '100vw';
   }
-  
 
   const portfolioItems = [
     {
@@ -107,8 +108,8 @@ function Portfolio() {
         <div style={props}>
 
           <div className="Main-Container" style={{background: mainBackground}}>
-          <NextArrow />
-            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} resultsIdx={resultsIdx} setResultsIdx={setResultsIdx}/>
+            <NextArrow />
+            <ProjectsList portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} resultsIdx={resultsIdx} setResultsIdx={memoizedSetResultsIdx}/>
             {gifBackground}
           </div>
  
