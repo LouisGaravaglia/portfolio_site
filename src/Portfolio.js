@@ -71,7 +71,7 @@ function Portfolio() {
       gif: PORTFOLIOSITE_GIF,
       link: "https://louis-garavaglia.netlify.app/",
       githubLink: "https://github.com/LouisGaravaglia/portfolio_site",
-      summary: "A clean and interactive site that puts the focus on the projects. Designed with a mobile-first approach. Tech Stack: HTML5 | CSS3 | React",
+      summary: "A clean and interactive site that puts the focus on the individual projects. Designed with a mobile-first approach. Tech Stack: HTML5 | CSS3 | React",
       classname: "Wine-Not-Opacity"
     }
   ];

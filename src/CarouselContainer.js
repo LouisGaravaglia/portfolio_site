@@ -1,18 +1,18 @@
 import React, {useRef, useEffect, useState} from 'react';
-import useViewport from './hooks/useViewport';
+// import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
-import useMousePosition from './hooks/useMousePosition';
+// import useMousePosition from './hooks/useMousePosition';
 
 const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx}) => {
-  const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
-  const {viewportWidth, viewportHeight} = useViewport();
+  // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
+  // const {viewportWidth, viewportHeight} = useViewport();
   const projectRef = useRef(null);
-  const horizontalMidPointOfDiv = viewportWidth / 2;
-  const verticalMidPointOfDiv = viewportHeight / 2;
-  const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
-  const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
-  const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
-  const [mobileMode, setMobileMode] = useState(false);
+  // const horizontalMidPointOfDiv = viewportWidth / 2;
+  // const verticalMidPointOfDiv = viewportHeight / 2;
+  // const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
+  // const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
+  // const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
+  // const [mobileMode, setMobileMode] = useState(false);
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -38,39 +38,46 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
     setResultsIdx(index);
   };
 
-  useEffect(() => {
-    if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
-    if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
-  }, [viewportWidth, viewportHeight]);
+  console.log(project);
 
-  const boxStyles = {
-    transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
-  };
+  // useEffect(() => {
+  //   if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
+  //   if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
+  // }, [viewportWidth, viewportHeight]);
 
-  const desktopJSX = (
-    <div className='card' onMouseMove={() => setProjectDisplayedInCenter(false)}>
-      <div className="Work-Summary-Box" style={projectDisplayedInCenter ? {} : boxStyles} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
-        {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
-      </div>
-    </div>
-  );
+  // const boxStyles = {
+  //   transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
+  // };
 
-  const mobileJSX = (
-    <div className='card'>
-      <div className="Work-Mobile-Container">
-        <p className="Work-Title-Mobile">{project.title}</p>
-          <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
-            <p className="Work-Summary-Text-Mobile">{project.summary}</p>
-          </div>
-      </div>
-    </div>
-  );
+  // const desktopJSX = (
+  //   <div className='card' onMouseMove={() => setProjectDisplayedInCenter(false)}>
+  //     <div className="Work-Summary-Box" style={projectDisplayedInCenter ? {} : boxStyles} onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
+  //       {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
+  //     </div>
+  //   </div>
+  // );
+
+  // const mobileJSX = (
+  //   <div className='card'>
+  //     <div className="Work-Mobile-Container">
+  //       <p className="Work-Title-Mobile">{project.title}</p>
+  //         <div className="Work-Summary-Box-Mobile" onClick={openInNewTab}>
+  //           <p className="Work-Summary-Text-Mobile">{project.summary}</p>
+  //         </div>
+  //     </div>
+  //   </div>
+  // );
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
     <div ref={projectRef}>
-          {mobileMode ? mobileJSX : desktopJSX}
+      {/* {mobileMode ? mobileJSX : desktopJSX} */}
+      <div className='card'>
+        <div className="Work-Summary-Box" onClick={openInNewTab}  onMouseEnter={handleProjectHover} onMouseLeave={() => setProjectHover(false)} >
+          {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
+        </div>
+      </div>
     </div>
   );
 };
