@@ -65,12 +65,12 @@ html, body {
   user-select: none;
 }
 
-ion-icon {
+/* ion-icon {
   cursor: pointer;
   margin-bottom: -1px;
   color: #fff;
   font-size: 25px;
-}
+} */
 
 /* //////////////////////////////////////  PAGE NUMBERS ////////////////////////////////////// */
 
@@ -146,10 +146,9 @@ ion-icon {
   flex-wrap: 'nowrap';
 }
 
-
 /* //////////////////////////////////////  MAIN  ////////////////////////////////////// */
 
-.Main-Container{
+.Main-Container {
   position: relative;
   text-align: center;
   display: flex;
@@ -190,7 +189,7 @@ ion-icon {
   z-index: -10;
 }
 
-.Work-Summary-Box{
+.Work-Summary-Box {
   position: relative;
   text-align: center;
   display: flex;
@@ -215,9 +214,7 @@ ion-icon {
   user-select: none;
 }
 
-
-
-.Work-Mobile-Container {
+/* .Work-Mobile-Container {
   position: relative;
   flex-direction: column;
   display: flex;
@@ -235,7 +232,6 @@ ion-icon {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* position: absolute; */
   height: calc(100% - 350px);
   width: calc(100% - 80px);
   min-height: 150px;
@@ -252,7 +248,6 @@ ion-icon {
   z-index: 6;
   margin: 10px 25px;
   user-select: none;
-
 }
 
 .Work-Title-Mobile {
@@ -263,7 +258,7 @@ ion-icon {
   z-index: 6;
   margin: 10px 5px;
   user-select: none;
-}
+} */
 
 .LYRCS-Opacity {
   background-color: #2e1f46;
@@ -277,7 +272,7 @@ ion-icon {
 
 /* //////////////////////////////////////  PROJECT TITLE ////////////////////////////////////// */
 
-.Work-Title-Box {
+/* .Work-Title-Box {
   position: relative;
   text-align: center;
   display: flex;
@@ -287,7 +282,7 @@ ion-icon {
   width: 400px;
   height: 400px;
   border: 2px solid #fff;
-}
+} */
 
 .Work-Title {
   font-family: 'Montserrat', sans-serif;
@@ -341,13 +336,16 @@ ion-icon {
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
-.logo {
+/* .logo {
   font-size: 20px;
   color: yellow;
   cursor: pointer;
-}
+} */
 
 ion-icon {
+  cursor: default;
+  margin-bottom: -1px;
+  color: #fff;
   font-size: 100px;
 }
 
@@ -362,9 +360,9 @@ ion-icon {
 }
 
 
-.Back-Arrow {
+/* .Back-Arrow {
   margin-right: 100px;
-}
+} */
 
 /* //////////////////////////////////////  MEDIA QUERIES - 820PX ////////////////////////////////////// */
 
@@ -374,10 +372,10 @@ ion-icon {
     font-size: 2rem;
   }
 
-  .Work-Title-Box {
+  /* .Work-Title-Box {
     width: 300px;
     height: 300px;
-  }
+  } */
 
   .Work-Summary-Container {
     height: 300px;
@@ -410,10 +408,10 @@ ion-icon {
     font-size: 1.5rem;
   }
 
-  .Work-Title-Box {
+  /* .Work-Title-Box {
     width: 200px;
     height: 200px;
-  }
+  } */
 
   .Work-Summary-Container {
     height: 200px;
