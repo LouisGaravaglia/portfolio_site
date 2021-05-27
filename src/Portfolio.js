@@ -9,6 +9,7 @@ import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
 import SMARTREACH_GIF from "./images/SMARTREACH.mp4";
 import PORTFOLIOSITE_GIF from "./images/PORTFOLIOSITE.mp4";
+import BRIGHTMOMENTS_GIF from "./images/BRIGHTMOMENTS.mp4";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
@@ -37,6 +38,15 @@ function Portfolio() {
       link: "http://www.acoustigram.io/",
       githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
       summary: "***CURRENTLY IN DEVELOPMENT*** Acoustigram.io is a web app that will use AI to create playlists of new music releases it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
+      classname: "LYRCS-Opacity"
+    },
+    {
+      id: 2,
+      title: "Bright Moments",
+      gif: BRIGHTMOMENTS_GIF,
+      link: "https://brightmoments.io/",
+      githubLink: "https://github.com/Bright-Moments",
+      summary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Node | Express",
       classname: "LYRCS-Opacity"
     },
     {
