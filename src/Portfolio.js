@@ -40,7 +40,7 @@ function Portfolio() {
       classname: "LYRCS-Opacity"
     },
     {
-      id: 2,
+      id: 3,
       title: "LYRCS",
       gif: LYRCS_GIF,
       link: "http://findlyrcs.herokuapp.com/",
@@ -49,7 +49,7 @@ function Portfolio() {
       classname: "LYRCS-Opacity"
     },
     {
-      id: 3,
+      id: 4,
       title: "The Smart Reach",
       gif: SMARTREACH_GIF,
       link: "https://www.thesmartreach.org/",
@@ -58,7 +58,7 @@ function Portfolio() {
       classname: "LYRCS-Opacity"
     },
     {
-      id: 4,
+      id: 5,
       title: "Wine-not!",
       gif: WINENOT_GIF,
       link: "https://findwinenot.herokuapp.com/",
@@ -67,7 +67,7 @@ function Portfolio() {
       classname: "Wine-Not-Opacity"
     },
     {
-      id: 5,
+      id: 6,
       title: "Portfolio site",
       gif: PORTFOLIOSITE_GIF,
       link: "https://louis-garavaglia.netlify.app/",
