@@ -4,7 +4,7 @@ import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 import CarouselContainer from './CarouselContainer';
 
-const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx}) => {
+const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx, setResultsIdx, mobileMode}) => {
   const projectInView = portfolioItems[resultsIdx];
 
   const openSite = () => {
@@ -24,7 +24,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     <>
       <div className="Project-Container" >
         <div className="scrolling-wrapper">
-          {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx} />)}
+          {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx} mobileMode={mobileMode} />)}
         </div>
       </div>
       <div className='Project-Info-Footer-Container'>

@@ -3,7 +3,7 @@ import React, {useRef, useEffect, memo} from 'react';
 import useElementOnScreen from './hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
 
-const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx}) => {
+const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx, mobileMode}) => {
   // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   // const {viewportWidth, viewportHeight} = useViewport();
   const projectRef = useRef(null);
@@ -12,7 +12,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   // const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
   // const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
   // const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
-  // const [mobileMode, setMobileMode] = useState(false);
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -31,13 +30,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
       setProjectHover(false);
     }
   }, [partiallyInView, index, setResultsIdx, setProjectHover]);
-
-  // console.log(project);
-
-  // useEffect(() => {
-  //   if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
-  //   if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
-  // }, [viewportWidth, viewportHeight]);
 
   // const boxStyles = {
   //   transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
@@ -69,7 +61,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
       {/* {mobileMode ? mobileJSX : desktopJSX} */}
       <div className='card'>
         <div className="Work-Summary-Box" onClick={openInNewTab}  onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)} >
-          {projectHover ? <p className="Work-Summary-Text">{project.summary}</p> : <p className="Work-Title">{project.title}</p>}
+          {projectHover || mobileMode ? <p className="Work-Summary-Text">{mobileMode ? project.mobileSummary : project.summary}</p> : <p className="Work-Title">{project.title}</p>}
         </div>
       </div>
     </div>
