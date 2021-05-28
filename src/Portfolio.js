@@ -143,7 +143,7 @@ function Portfolio() {
 
           <div className="Main-Container" style={{background: mainBackground}}>
             <NextArrow />
-            <ProjectsList portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} resultsIdx={resultsIdx} setResultsIdx={memoizedSetResultsIdx}/>
+            <ProjectsList portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} resultsIdx={resultsIdx} setResultsIdx={memoizedSetResultsIdx} mobileMode={mobileMode}/>
             {gifBackground}
           </div>
  

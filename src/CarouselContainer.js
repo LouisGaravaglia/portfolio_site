@@ -1,18 +1,17 @@
-import React, {useRef, useEffect, memo, useState} from 'react';
-import useViewport from './hooks/useViewport';
+import React, {useRef, useEffect, memo} from 'react';
+// import useViewport from './hooks/useViewport';
 import useElementOnScreen from './hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
 
-const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx}) => {
+const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx, mobileMode}) => {
   // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
-  const {viewportWidth, viewportHeight} = useViewport();
+  // const {viewportWidth, viewportHeight} = useViewport();
   const projectRef = useRef(null);
   // const horizontalMidPointOfDiv = viewportWidth / 2;
   // const verticalMidPointOfDiv = viewportHeight / 2;
   // const translateXPosition = (cursorHorizontalPosition - horizontalMidPointOfDiv) / 4.5;
   // const translateYPosition = (cursorVerticalPosition - verticalMidPointOfDiv) / 4.5;
   // const [projectDisplayedInCenter, setProjectDisplayedInCenter] = useState(true);
-  const [mobileMode, setMobileMode] = useState(false);
 
   //OPENS PROJECT SITE IN A NEW TAB
   const openInNewTab = () => {
@@ -31,13 +30,6 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
       setProjectHover(false);
     }
   }, [partiallyInView, index, setResultsIdx, setProjectHover]);
-
-  // console.log(project);
-
-  useEffect(() => {
-    if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
-    if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
-  }, [viewportWidth, viewportHeight]);
 
   // const boxStyles = {
   //   transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
