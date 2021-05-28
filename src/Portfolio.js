@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
@@ -9,6 +9,7 @@ import LYRCS_GIF from "./images/LYRCS.mp4";
 import WINENOT_GIF from "./images/WINENOT.mp4";
 import SMARTREACH_GIF from "./images/SMARTREACH.mp4";
 import PORTFOLIOSITE_GIF from "./images/PORTFOLIOSITE.mp4";
+import BRIGHTMOMENTS_GIF from "./images/BRIGHTMOMENTS.mp4";
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
@@ -17,6 +18,8 @@ function Portfolio() {
   const aspectRatio = viewportWidth / viewportHeight;
   let gifWidth;
   let gifHeight;
+  const memoizedSetProjectHover = useCallback(bool => setProjectHover(bool), []);
+  const memoizedSetResultsIdx = useCallback(num => setResultsIdx(num), []);
 
   //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
   if (aspectRatio <= 2.358916) {
@@ -26,7 +29,6 @@ function Portfolio() {
     gifHeight = 'auto';
     gifWidth = '100vw';
   }
-  
 
   const portfolioItems = [
     {
@@ -40,6 +42,15 @@ function Portfolio() {
     },
     {
       id: 2,
+      title: "Bright Moments",
+      gif: BRIGHTMOMENTS_GIF,
+      link: "https://brightmoments.io/",
+      githubLink: "https://github.com/Bright-Moments",
+      summary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Node | Express",
+      classname: "LYRCS-Opacity"
+    },
+    {
+      id: 3,
       title: "LYRCS",
       gif: LYRCS_GIF,
       link: "http://findlyrcs.herokuapp.com/",
@@ -48,7 +59,7 @@ function Portfolio() {
       classname: "LYRCS-Opacity"
     },
     {
-      id: 3,
+      id: 4,
       title: "The Smart Reach",
       gif: SMARTREACH_GIF,
       link: "https://www.thesmartreach.org/",
@@ -57,7 +68,7 @@ function Portfolio() {
       classname: "LYRCS-Opacity"
     },
     {
-      id: 4,
+      id: 5,
       title: "Wine-not!",
       gif: WINENOT_GIF,
       link: "https://findwinenot.herokuapp.com/",
@@ -66,12 +77,12 @@ function Portfolio() {
       classname: "Wine-Not-Opacity"
     },
     {
-      id: 5,
+      id: 6,
       title: "Portfolio site",
       gif: PORTFOLIOSITE_GIF,
       link: "https://louis-garavaglia.netlify.app/",
       githubLink: "https://github.com/LouisGaravaglia/portfolio_site",
-      summary: "A clean and interactive site that puts the focus on the projects. Designed with a mobile-first approach. Tech Stack: HTML5 | CSS3 | React",
+      summary: "A clean and interactive site that puts the focus on the individual projects. Designed with a mobile-first approach. Tech Stack: HTML5 | CSS3 | React",
       classname: "Wine-Not-Opacity"
     }
   ];
@@ -107,8 +118,8 @@ function Portfolio() {
         <div style={props}>
 
           <div className="Main-Container" style={{background: mainBackground}}>
-          <NextArrow />
-            <ProjectsList key={portfolioItems[0].id} portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={setProjectHover} resultsIdx={resultsIdx} setResultsIdx={setResultsIdx}/>
+            <NextArrow />
+            <ProjectsList portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} resultsIdx={resultsIdx} setResultsIdx={memoizedSetResultsIdx}/>
             {gifBackground}
           </div>
  

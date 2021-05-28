@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
@@ -12,6 +12,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     if (newWindow) newWindow.opener = null;
   };
 
+ 
   const openGitHub = () => {
     const newWindow = window.open(projectInView.githubLink, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
@@ -23,7 +24,7 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
     <>
       <div className="Project-Container" >
         <div className="scrolling-wrapper">
-          {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx}/>)}
+          {portfolioItems.map((project, index) => <CarouselContainer key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={setProjectHover} setResultsIdx={setResultsIdx} />)}
         </div>
       </div>
       <div className='Project-Info-Footer-Container'>
@@ -47,4 +48,4 @@ const ProjectList = ({portfolioItems, projectHover, setProjectHover, resultsIdx,
   );
 };
 
-export default ProjectList;
+export default memo(ProjectList);
