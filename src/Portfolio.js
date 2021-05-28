@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect, useRef} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
 import ProjectsList from "./ProjectsList";
@@ -20,6 +20,10 @@ function Portfolio() {
   let gifHeight;
   const memoizedSetProjectHover = useCallback(bool => setProjectHover(bool), []);
   const memoizedSetResultsIdx = useCallback(num => setResultsIdx(num), []);
+  const [mobileMode, setMobileMode] = useState(false);
+  const videoRef = useRef();
+
+
 
   //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
   if (aspectRatio <= 2.358916) {
@@ -93,9 +97,23 @@ function Portfolio() {
     }
   ];
 
+  useEffect(() => {
+    if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
+    if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
+  }, [viewportWidth, viewportHeight]);
+
+  const previousUrl = useRef(portfolioItems[resultsIdx].gif);
+
+  //FORCE THE VIDEO ELEMENT TO LOAD THE NEW MP4 FILE FOR THE CURRENT PORTFOLIO ITEM
+  useEffect(() => {
+    if (previousUrl.current === portfolioItems[resultsIdx].gif) return;
+    if (videoRef.current) videoRef.current.load();
+    previousUrl.current = portfolioItems[resultsIdx].gif;
+  }, [portfolioItems, resultsIdx])
+
   let mainBackground;
 
-  if (projectHover) {
+  if (projectHover || mobileMode) {
     mainBackground = "none"
   } else {
     mainBackground = "linear-gradient(to right, #63a198 0%, #8874c2 100%)";
@@ -103,12 +121,12 @@ function Portfolio() {
 
   let gifBackground;
 
-  if (projectHover) gifBackground = (
+  if (projectHover || mobileMode) gifBackground = (
     <>
-    <div className="Work-Gif-Box"></div>
-    <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted>
-      <source src={portfolioItems[resultsIdx].gif} type="video/mp4" />
-    </video>
+      <div className="Work-Gif-Box"></div>
+      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef}>
+        <source src={portfolioItems[resultsIdx].gif} type="video/mp4" />
+      </video>
     </>
   )
 
