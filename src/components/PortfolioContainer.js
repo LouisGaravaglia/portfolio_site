@@ -1,5 +1,4 @@
 import React, {useState, useCallback, useEffect, useRef} from 'react';
-import {Spring} from 'react-spring/renderprops';
 import PortfolioItem from "./PortfolioItem";
 import useViewport from "../hooks/useViewport"
 import NextArrow from './NextArrow';
@@ -60,28 +59,15 @@ function PortfolioContainer() {
   )
 
   return (
-    <Spring
-      from={{opacity: 0}}
-      to={{opacity: 1}}
-      config={{delay: 300, duration: 300}}
-    >
-      {props => (
-        <div style={props}>
-
-          <div className="Main-Container" style={{background: mainBackground}}>
-            <NextArrow />
-            <div className="Project-Container" >
-              <div className="scrolling-wrapper">
-                {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
-              </div>
-            </div>
-            {gifBackground}
-          </div>
- 
-
+    <div className="Main-Container" style={{background: mainBackground}}>
+      <NextArrow />
+      <div className="Project-Container" >
+        <div className="scrolling-wrapper">
+          {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
         </div>
-      )}
-    </Spring>
+      </div>
+      {gifBackground}
+    </div>
   );
 };
 
