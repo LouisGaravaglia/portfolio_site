@@ -1,7 +1,7 @@
 import React, {useState, useCallback, useEffect, useRef} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import './App.css';
-import ProjectsList from "./ProjectsList";
+import PortfolioItem from "./PortfolioItem";
 import useViewport from "./hooks/useViewport"
 import NextArrow from './NextArrow';
 import ACOUSTIC_GIF from "./images/ACOUSTIC.mp4";
@@ -22,8 +22,6 @@ function Portfolio() {
   const memoizedSetResultsIdx = useCallback(num => setResultsIdx(num), []);
   const [mobileMode, setMobileMode] = useState(false);
   const videoRef = useRef();
-
-
 
   //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
   if (aspectRatio <= 2.358916) {
@@ -143,7 +141,11 @@ function Portfolio() {
 
           <div className="Main-Container" style={{background: mainBackground}}>
             <NextArrow />
-            <ProjectsList portfolioItems={portfolioItems} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} resultsIdx={resultsIdx} setResultsIdx={memoizedSetResultsIdx} mobileMode={mobileMode}/>
+            <div className="Project-Container" >
+              <div className="scrolling-wrapper">
+                {portfolioItems.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setResultsIdx={memoizedSetResultsIdx} mobileMode={mobileMode} portfolioItems={portfolioItems} resultsIdx={resultsIdx}/>)}
+              </div>
+            </div>
             {gifBackground}
           </div>
  
