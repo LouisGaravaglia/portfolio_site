@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import PortfolioContainer from "./PortfolioContainer";
-import Navbar from "./Navbar";
+import PortfolioContainer from "./components/PortfolioContainer";
+import Navbar from "./components/Navbar";
 
 
 function App() {

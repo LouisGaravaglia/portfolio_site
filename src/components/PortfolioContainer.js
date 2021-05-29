@@ -1,22 +1,21 @@
 import React, {useState, useCallback, useEffect, useRef} from 'react';
 import {Spring} from 'react-spring/renderprops';
-import './App.css';
 import PortfolioItem from "./PortfolioItem";
-import useViewport from "./hooks/useViewport"
+import useViewport from "../hooks/useViewport"
 import NextArrow from './NextArrow';
-import portfolioItems from './portfolioItems';
+import portfolioItems from '../portfolioItems';
 
 function Portfolio() {
   const [projectHover, setProjectHover] = useState(false);
-  const [resultsIdx, setResultsIdx] = useState(0);
+  const [indexOfProjectInView, setIndexOfProjectInView] = useState(0);
   const {viewportWidth, viewportHeight} = useViewport();
   const aspectRatio = viewportWidth / viewportHeight;
-  let gifWidth;
-  let gifHeight;
   const memoizedSetProjectHover = useCallback(bool => setProjectHover(bool), []);
-  const memoizedSetResultsIdx = useCallback(num => setResultsIdx(num), []);
+  const memoizedSetIndexOfProjectInView = useCallback(num => setIndexOfProjectInView(num), []);
   const [mobileMode, setMobileMode] = useState(false);
   const videoRef = useRef();
+  let gifWidth;
+  let gifHeight;
 
   //KEEPING THE BACKGROUND GIF COVERING THE BACKGROUND AT ALL TIMES
   if (aspectRatio <= 2.358916) {
@@ -30,16 +29,16 @@ function Portfolio() {
   useEffect(() => {
     if (viewportWidth <= 700 && viewportHeight <= 650) setMobileMode(true);
     if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
-  }, [viewportWidth, viewportHeight]);
+  }, [viewportWidth, viewportHeight])
 
-  const previousUrl = useRef(portfolioItems[resultsIdx].gif);
+  const previousUrl = useRef(portfolioItems[indexOfProjectInView].gif);
 
   //FORCE THE VIDEO ELEMENT TO LOAD THE NEW MP4 FILE FOR THE CURRENT PORTFOLIO ITEM
   useEffect(() => {
-    if (previousUrl.current === portfolioItems[resultsIdx].gif) return;
+    if (previousUrl.current === portfolioItems[indexOfProjectInView].gif) return;
     if (videoRef.current) videoRef.current.load();
-    previousUrl.current = portfolioItems[resultsIdx].gif;
-  }, [portfolioItems, resultsIdx])
+    previousUrl.current = portfolioItems[indexOfProjectInView].gif;
+  }, [portfolioItems, indexOfProjectInView])
 
   let mainBackground;
 
@@ -47,7 +46,7 @@ function Portfolio() {
     mainBackground = "none"
   } else {
     mainBackground = "linear-gradient(to right, #63a198 0%, #8874c2 100%)";
-  };
+  }
 
   let gifBackground;
 
@@ -55,10 +54,10 @@ function Portfolio() {
     <>
       <div className="Work-Gif-Box"></div>
       <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef}>
-        <source src={portfolioItems[resultsIdx].gif} type="video/mp4" />
+        <source src={portfolioItems[indexOfProjectInView].gif} type="video/mp4" />
       </video>
     </>
-  );
+  )
 
 ////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
@@ -75,7 +74,7 @@ function Portfolio() {
             <NextArrow />
             <div className="Project-Container" >
               <div className="scrolling-wrapper">
-                {portfolioItems.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setResultsIdx={memoizedSetResultsIdx} mobileMode={mobileMode} portfolioItems={portfolioItems} resultsIdx={resultsIdx}/>)}
+                {portfolioItems.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolioItems={portfolioItems} indexOfProjectInView={indexOfProjectInView}/>)}
               </div>
             </div>
             {gifBackground}

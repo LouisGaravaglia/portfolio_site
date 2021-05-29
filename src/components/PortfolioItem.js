@@ -1,12 +1,12 @@
 import React, {useRef, useEffect, memo} from 'react';
 // import useViewport from './hooks/useViewport';
-import useElementOnScreen from './hooks/useElementOnScreen';
+import useElementOnScreen from '../hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
 import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 
-const CarouselContainer = ({project, projectHover, setProjectHover, index, setResultsIdx, mobileMode, portfolioItems, resultsIdx}) => {
+const CarouselContainer = ({project, projectHover, setProjectHover, index, setIndexOfProjectInView, mobileMode, portfolioItems, indexOfProjectInView}) => {
   // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   // const {viewportWidth, viewportHeight} = useViewport();
   const projectRef = useRef(null);
@@ -20,24 +20,25 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
   const openProjectSite = () => {
     const newWindow = window.open(project.link, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
-  };
+  }
  
   const openProjectGitHub = () => {
     const newWindow = window.open(projectInView.githubLink, '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
-  };
+  }
 
   const partiallyInViewEntry = useElementOnScreen(projectRef, {
     threshold: 0.4
-  });
+  })
+
   const partiallyInView = !!partiallyInViewEntry?.isIntersecting;
 
   useEffect(() => {
     if (partiallyInView) {
-      setResultsIdx(index);
+      setIndexOfProjectInView(index);
       setProjectHover(false);
     }
-  }, [partiallyInView, index, setResultsIdx, setProjectHover]);
+  }, [partiallyInView, index, setIndexOfProjectInView, setProjectHover])
 
   // const boxStyles = {
   //   transform: `translate(${translateXPosition}px, ${translateYPosition}px)`,
@@ -94,7 +95,7 @@ const CarouselContainer = ({project, projectHover, setProjectHover, index, setRe
           </div>
         </div>
       </div>
-      {resultsIdx === index ? projectInfoFooter : <></>}
+      {indexOfProjectInView === index ? projectInfoFooter : <></>}
     </>
   );
 };
