@@ -3,9 +3,7 @@ import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub'
 import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin'
 
-const NavBar = () => {
-
-////////////////////////////////////////////////////  HANDLE CLICK FUNCTIONS  ////////////////////////////////////////////////////
+function NavBar() {
 
   const openLinkedIn = () => {
     const newWindow = window.open("https://www.linkedin.com/in/louisgaravaglia/", '_blank', 'noopener,noreferrer')
@@ -16,8 +14,6 @@ const NavBar = () => {
     const newWindow = window.open("https://github.com/LouisGaravaglia", '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null;
   };
-
-////////////////////////////////////////////////////  RETURN  ////////////////////////////////////////////////////
 
   return (
     <>

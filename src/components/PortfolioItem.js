@@ -4,7 +4,7 @@ import useElementOnScreen from '../hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
 import PortfolioItemDetails from './PortfolioItemDetails';
 
-const PortfolioItem = ({project, projectHover, setProjectHover, index, setIndexOfProjectInView, mobileMode, portfolio, indexOfProjectInView}) => {
+function PortfolioItem({project, projectHover, setProjectHover, index, setIndexOfProjectInView, mobileMode, portfolio, indexOfProjectInView}) {
   // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
   // const {viewportWidth, viewportHeight} = useViewport();
   const projectRef = useRef(null);

@@ -3,7 +3,7 @@ import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 
-const PortfolioItemDetails = ({project, index, portfolio}) => {
+function PortfolioItemDetails({project, index, portfolio}) {
 
   const openProjectSite = () => {
     const newWindow = window.open(project.link, '_blank', 'noopener,noreferrer')
