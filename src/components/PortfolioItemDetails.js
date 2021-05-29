@@ -3,7 +3,7 @@ import Hover from "./Hover";
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import MdLaptop from 'react-ionicons/lib/MdLaptop';
 
-const PortfolioItemDetails = ({project, index, portfolioItems}) => {
+const PortfolioItemDetails = ({project, index, portfolio}) => {
 
   const openProjectSite = () => {
     const newWindow = window.open(project.link, '_blank', 'noopener,noreferrer')
@@ -24,7 +24,7 @@ const PortfolioItemDetails = ({project, index, portfolioItems}) => {
           </Hover>
         </div>
         <div className='Page-Number-Box'>
-          <p className="Project-Page-Number">0{index + 1} / 0{portfolioItems.length}</p>
+          <p className="Project-Page-Number">0{index + 1} / 0{portfolio.length}</p>
         </div>
         <div className='Website-Project-Box'>
           <Hover scale={1.05}>

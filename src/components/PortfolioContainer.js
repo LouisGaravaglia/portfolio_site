@@ -3,9 +3,9 @@ import {Spring} from 'react-spring/renderprops';
 import PortfolioItem from "./PortfolioItem";
 import useViewport from "../hooks/useViewport"
 import NextArrow from './NextArrow';
-import portfolioItems from '../portfolioItems';
+import portfolio from '../portfolio';
 
-function Portfolio() {
+function PortfolioContainer() {
   const [projectHover, setProjectHover] = useState(false);
   const [indexOfProjectInView, setIndexOfProjectInView] = useState(0);
   const {viewportWidth, viewportHeight} = useViewport();
@@ -31,14 +31,14 @@ function Portfolio() {
     if (viewportWidth > 700 || viewportHeight > 650) setMobileMode(false);
   }, [viewportWidth, viewportHeight])
 
-  const previousUrl = useRef(portfolioItems[indexOfProjectInView].gif);
+  const previousUrl = useRef(portfolio[indexOfProjectInView].gif);
 
   //FORCE THE VIDEO ELEMENT TO LOAD THE NEW MP4 FILE FOR THE CURRENT PORTFOLIO ITEM
   useEffect(() => {
-    if (previousUrl.current === portfolioItems[indexOfProjectInView].gif) return;
+    if (previousUrl.current === portfolio[indexOfProjectInView].gif) return;
     if (videoRef.current) videoRef.current.load();
-    previousUrl.current = portfolioItems[indexOfProjectInView].gif;
-  }, [portfolioItems, indexOfProjectInView])
+    previousUrl.current = portfolio[indexOfProjectInView].gif;
+  }, [portfolio, indexOfProjectInView])
 
   let mainBackground;
 
@@ -54,7 +54,7 @@ function Portfolio() {
     <>
       <div className="Work-Gif-Box"></div>
       <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef}>
-        <source src={portfolioItems[indexOfProjectInView].gif} type="video/mp4" />
+        <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
       </video>
     </>
   )
@@ -72,7 +72,7 @@ function Portfolio() {
             <NextArrow />
             <div className="Project-Container" >
               <div className="scrolling-wrapper">
-                {portfolioItems.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolioItems={portfolioItems} indexOfProjectInView={indexOfProjectInView}/>)}
+                {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
               </div>
             </div>
             {gifBackground}
@@ -85,4 +85,4 @@ function Portfolio() {
   );
 };
 
-export default Portfolio;
+export default PortfolioContainer;
