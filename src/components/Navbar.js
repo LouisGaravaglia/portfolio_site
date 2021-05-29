@@ -19,7 +19,7 @@ function NavBar() {
     <>
       <div className="Navbar-Container-Left">
         <div className="Navbar-Name-Box">
-            <p  className="Navbar-Name">Louis Garavaglia</p>
+            <p className="Navbar-Name">Louis Garavaglia</p>
         </div>
       </div>
       <div className="Navbar-Container-Right">
