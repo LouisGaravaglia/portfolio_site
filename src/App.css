@@ -348,10 +348,7 @@ ion-icon {
   }
 
   ion-icon {
-    cursor: default;
-    margin-bottom: -1px;
-    color: #fff;
-    font-size: 30px;
+    font-size: 50px;
   }
 
 }
@@ -369,9 +366,6 @@ ion-icon {
   }
 
   ion-icon {
-    cursor: default;
-    margin-bottom: -1px;
-    color: #fff;
     font-size: 30px;
   }
 }
