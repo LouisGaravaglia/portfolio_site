@@ -41,7 +41,7 @@ function PortfolioContainer() {
 
   let mainBackground;
 
-  if (mobileMode) {
+  if (projectHover || mobileMode) {
     mainBackground = "none"
   } else {
     mainBackground = "linear-gradient(to right, #63a198 0%, #8874c2 100%)";
@@ -49,10 +49,10 @@ function PortfolioContainer() {
 
   let gifBackground;
 
-  if (mobileMode) gifBackground = (
+  if (projectHover || mobileMode) gifBackground = (
     <>
       <div className="Work-Gif-Box"></div>
-      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsinline>
+      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsInline>
         <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
       </video>
     </>
