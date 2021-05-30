@@ -51,7 +51,7 @@ function PortfolioContainer() {
 
   if (projectHover || mobileMode) gifBackground = (
     <>
-      <div className="Work-Gif-Box"></div>
+      {/* <div className="Work-Gif-Box"></div> */}
       <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsInline>
         <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
       </video>
@@ -66,6 +66,7 @@ function PortfolioContainer() {
           {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
         </div>
       </div>
+      {mobileMode && <div className="Work-Gif-Box"></div>}
       {gifBackground}
     </div>
   );

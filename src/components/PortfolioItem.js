@@ -27,6 +27,7 @@ function PortfolioItem({project, projectHover, setProjectHover, index, setIndexO
 
   useEffect(() => {
     if (partiallyInView) {
+      console.log("in useEffect")
       setIndexOfProjectInView(index);
       setProjectHover(false);
     }
