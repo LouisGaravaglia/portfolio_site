@@ -33,11 +33,11 @@ function PortfolioContainer() {
   const previousUrl = useRef(portfolio[indexOfProjectInView].gif);
 
   //FORCE THE VIDEO ELEMENT TO LOAD THE NEW MP4 FILE FOR THE CURRENT PORTFOLIO ITEM
-  // useEffect(() => {
-  //   if (previousUrl.current === portfolio[indexOfProjectInView].gif) return;
-  //   if (videoRef.current) videoRef.current.load();
-  //   previousUrl.current = portfolio[indexOfProjectInView].gif;
-  // }, [portfolio, indexOfProjectInView])
+  useEffect(() => {
+    if (previousUrl.current === portfolio[indexOfProjectInView].gif) return;
+    if (videoRef.current) videoRef.current.load();
+    previousUrl.current = portfolio[indexOfProjectInView].gif;
+  }, [portfolio, indexOfProjectInView])
 
   let mainBackground;
 
@@ -52,7 +52,7 @@ function PortfolioContainer() {
   if (projectHover || mobileMode) gifBackground = (
     <>
       <div className="Work-Gif-Box"></div>
-      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef}>
+      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsinline>
         <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
       </video>
     </>
