@@ -59,7 +59,7 @@ function PortfolioItem({project, projectHover, setProjectHover, index, setIndexO
     <>
       <div ref={projectRef}>
         {/* {mobileMode ? mobileJSX : desktopJSX} */}
-        {mobileMode || projectHover && <div className="Work-Gif-Box"></div>}
+        {(mobileMode || projectHover) && <div className="Work-Gif-Box"></div>}
         <div className='card'>
           <div className="Work-Summary-Box" onClick={openProjectSite}  onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)} >
             {projectHover || mobileMode ? <p className="Work-Summary-Text">{mobileMode ? project.mobileSummary : project.summary}</p> : <p className="Work-Title">{project.title}</p>}
