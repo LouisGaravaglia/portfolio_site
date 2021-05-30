@@ -23,7 +23,7 @@ const portfolioItems = [
     link: "https://brightmoments.io/",
     githubLink: "https://github.com/Bright-Moments",
     summary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Node | Express",
-    mobileSummary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Node | Express",
+    mobileSummary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Express",
     classname: "LYRCS-Opacity"
   },
   {
