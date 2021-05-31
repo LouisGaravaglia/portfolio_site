@@ -21,8 +21,8 @@ const NextArrow = () => {
       config={{delay: 0, duration: 1500}}
     >
       {props => (
-        <div style={props}>
-          <div className="Forward-Arrow-Box">
+        <div style={props} className='Next-Arrow-Container'>
+          <div className="Next-Arrow-Box">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </div>
         </div>

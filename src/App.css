@@ -274,14 +274,14 @@ html, body {
 
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
-ion-icon {
-  cursor: default;
-  margin-bottom: -1px;
-  color: #fff;
-  font-size: 100px;
+.Next-Arrow-Container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
 }
 
-.Forward-Arrow-Box {
+.Next-Arrow-Box {
   position: absolute;
   right: 0;
   height: 100vh;
@@ -289,6 +289,13 @@ ion-icon {
   align-items: center;
   margin-right: 30px;
   /* border: 4px solid yellow; */
+}
+
+ion-icon {
+  cursor: default;
+  margin-bottom: -1px;
+  color: #fff;
+  font-size: 100px;
 }
 
 /* //////////////////////////////////////  MEDIA QUERIES - 820PX ////////////////////////////////////// */

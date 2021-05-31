@@ -63,15 +63,19 @@ function PortfolioContainer() {
   
 
   return (
+    <>
+        
     <div className="Main-Container" style={{background: mainBackground}}>
-      <NextArrow />
+        <NextArrow />
       <div className="Project-Container" >
+
         <div className="scrolling-wrapper" style={projectBackground}>
           {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
         </div>
       </div>
       {gifBackground}
     </div>
+    </>
   );
 };
 
