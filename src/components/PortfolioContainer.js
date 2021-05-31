@@ -50,16 +50,23 @@ function PortfolioContainer() {
   let gifBackground;
 
   if (projectHover || mobileMode) gifBackground = (
-    <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsInline>
-      <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
-    </video>
+    <>
+      <video style={{position: "absolute", width: gifWidth, height: gifHeight, zIndex: -12}} loop={true} autoPlay="autoplay" muted ref={videoRef} playsInline>
+        <source src={portfolio[indexOfProjectInView].gif} type="video/mp4" />
+      </video>
+    </>
   )
+
+  let projectBackground;
+
+  if (projectHover || mobileMode) projectBackground = {background: "rgba(0, 27, 34, 0.7)"};
+  
 
   return (
     <div className="Main-Container" style={{background: mainBackground}}>
       <NextArrow />
       <div className="Project-Container" >
-        <div className="scrolling-wrapper">
+        <div className="scrolling-wrapper" style={projectBackground}>
           {portfolio.map((project, index) => <PortfolioItem key={project.id} index={index} project={project} projectHover={projectHover} setProjectHover={memoizedSetProjectHover} setIndexOfProjectInView={memoizedSetIndexOfProjectInView} mobileMode={mobileMode} portfolio={portfolio} indexOfProjectInView={indexOfProjectInView}/>)}
         </div>
       </div>

@@ -12,8 +12,8 @@ const portfolioItems = [
     gif: ACOUSTIC_GIF,
     link: "http://www.acoustigram.io/",
     githubLink: "https://github.com/LouisGaravaglia/test-acoustic-frontend",
-    summary: "***CURRENTLY IN DEVELOPMENT*** Acoustigram.io is a web app that will use AI to create playlists of new music releases it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
-    mobileSummary: "Acoustigram.io is my latest side-project. A web app which aims to use AI to create playlists of new music it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
+    summary: "***CURRENTLY IN DEVELOPMENT*** Acoustigram.io is a web app that will use ML to create playlists of new music releases it thinks you may like. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
+    mobileSummary: "Acoustigram.io is my latest side-project. A web app which aims to use ML to create playlists of new music. Tech Stack: Typescript | React | Python | Django | TensorFlow | PostgreSQL",
     classname: "LYRCS-Opacity"
   },
   {
@@ -23,7 +23,7 @@ const portfolioItems = [
     link: "https://brightmoments.io/",
     githubLink: "https://github.com/Bright-Moments",
     summary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Node | Express",
-    mobileSummary: "Bright Moments is a physical NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation using React + Gatsby. Tech Stack: React | Gatsby | Express",
+    mobileSummary: "Bright Moments is a NFT gallery in Venice, CA. I am the Frontend Engineer, turning Figma mockups into pixel-perfect implementation. Tech Stack: React | Gatsby | Express",
     classname: "LYRCS-Opacity"
   },
   {

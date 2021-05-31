@@ -214,6 +214,14 @@ html, body {
   user-select: none;
 }
 
+/* #home-top-video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 0, 255, 0.749);
+    z-index: 4;
+} */
+
 .LYRCS-Opacity {
   background-color: #2e1f46;
   opacity: 0.2;

@@ -3,6 +3,8 @@ import React, {useRef, useEffect, memo} from 'react';
 import useElementOnScreen from '../hooks/useElementOnScreen';
 // import useMousePosition from './hooks/useMousePosition';
 import PortfolioItemDetails from './PortfolioItemDetails';
+import Hover from "./Hover";
+
 
 function PortfolioItem({project, projectHover, setProjectHover, index, setIndexOfProjectInView, mobileMode, portfolio, indexOfProjectInView}) {
   // const {x: cursorHorizontalPosition, y: cursorVerticalPosition} = useMousePosition();
@@ -57,9 +59,10 @@ function PortfolioItem({project, projectHover, setProjectHover, index, setIndexO
 
   return (
     <>
+
       <div ref={projectRef}>
         {/* {mobileMode ? mobileJSX : desktopJSX} */}
-        {(mobileMode || projectHover) && <div className="Work-Gif-Box"></div>}
+        {/* {(mobileMode || projectHover) && <div className="Work-Gif-Box"></div>} */}
         <div className='card'>
           <div className="Work-Summary-Box" onClick={openProjectSite}  onMouseEnter={() => setProjectHover(true)} onMouseLeave={() => setProjectHover(false)} >
             {projectHover || mobileMode ? <p className="Work-Summary-Text">{mobileMode ? project.mobileSummary : project.summary}</p> : <p className="Work-Title">{project.title}</p>}
@@ -68,6 +71,7 @@ function PortfolioItem({project, projectHover, setProjectHover, index, setIndexO
       </div>
       {indexOfProjectInView === index && <PortfolioItemDetails project={project} index={index} portfolio={portfolio} />}
     </>
+
   );
 };
 
