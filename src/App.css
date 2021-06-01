@@ -187,7 +187,6 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  position: absolute;
   height: 500px;
   width: 500px;
   border: 2px solid #fff;
@@ -271,14 +270,14 @@ html, body {
   /* border: 2px solid red; */
 }
 
-
 /* //////////////////////////////////////  ICONS ////////////////////////////////////// */
 
 .Next-Arrow-Container {
-  position: relative;
+  position: absolute;
+  right: 0;
   z-index: 1;
   height: 100vh;
-  width: 100vw;
+  width: 10px;
 }
 
 .Next-Arrow-Box {
@@ -300,16 +299,10 @@ ion-icon {
 
 /* //////////////////////////////////////  MEDIA QUERIES - 820PX ////////////////////////////////////// */
 
-@media only screen and (max-width: 820px), screen and (max-height: 650px) {
+@media only screen and (max-width: 820px), screen and (max-height: 700px) {
 
   .Work-Title {
     font-size: 2rem;
-  }
-
-  .Work-Summary-Container {
-    height: 300px;
-    width: 300px;
-    max-width: 300px;
   }
 
   .Work-Summary-Box{
@@ -331,16 +324,10 @@ ion-icon {
 
 /* //////////////////////////////////////  MEDIA QUERIES - 580PX ////////////////////////////////////// */
 
-@media only screen and (max-width: 580px), screen and (max-height: 450px) {
+@media only screen and (max-width: 580px), screen and (max-height: 500px) {
 
   .Work-Title {
     font-size: 1.5rem;
-  }
-
-  .Work-Summary-Container {
-    height: 200px;
-    width: 200px;
-    max-width: 200px;
   }
 
   .Work-Summary-Box{
